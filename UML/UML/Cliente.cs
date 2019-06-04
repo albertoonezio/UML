@@ -29,9 +29,7 @@ namespace UML
         public void Cadastrar(string nome, string endereco, string numero, string complemento, string bairro, string cep, string estado, string telefone, string celular, string filiacao, string status, string limiteDeCredito, string cpf, string rg, string cidade)
         {
             frmCliente cliente = new frmCliente();
-            DataSet ds = new DataSet();
-            DataTable dt = new DataTable();
-            dt.TableName = "Cliente";
+            //cliente.dgvCadastroCliente.Columns.Add(nome);
             cliente.dgvCadastroCliente.Rows.Add(nome);
         }
 
