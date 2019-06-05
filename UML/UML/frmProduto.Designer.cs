@@ -332,6 +332,7 @@
             this.Controls.Add(this.lblProdutoNome);
             this.Controls.Add(this.txtProdutoNome);
             this.Controls.Add(this.lblCadastroProduto);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmProduto";

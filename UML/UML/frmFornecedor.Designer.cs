@@ -509,6 +509,7 @@
             this.Controls.Add(this.lblFornecedorID);
             this.Controls.Add(this.nudFornecedorID);
             this.Controls.Add(this.lblCadastroFornecedor);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmFornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Fornecedor";

@@ -148,9 +148,10 @@
             this.Controls.Add(this.btnControleGeralPedido);
             this.Controls.Add(this.btnControleGeralCliente);
             this.Controls.Add(this.lblControleGeral);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Controle Geral";
             ((System.ComponentModel.ISupportInitialize)(this.picControleGeralCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picControleGeralFornecedor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picControleGeralProduto)).EndInit();

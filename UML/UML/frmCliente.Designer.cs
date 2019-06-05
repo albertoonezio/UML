@@ -65,10 +65,6 @@
             this.lblCadastroClienteRg = new System.Windows.Forms.Label();
             this.txtCadastroClienteRg = new System.Windows.Forms.TextBox();
             this.dgvCadastroCliente = new System.Windows.Forms.DataGridView();
-            this.txtClienteCidade = new System.Windows.Forms.TextBox();
-            this.lblClienteCidade = new System.Windows.Forms.Label();
-            this.lblClienteBancoSituacao = new System.Windows.Forms.Label();
-            this.lblClienteBanco = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,6 +82,10 @@
             this.CELULAR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LIMITE_DE_CREDITO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtClienteCidade = new System.Windows.Forms.TextBox();
+            this.lblClienteCidade = new System.Windows.Forms.Label();
+            this.lblClienteBancoSituacao = new System.Windows.Forms.Label();
+            this.lblClienteBanco = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudCadastroClienteID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadastroCliente)).BeginInit();
             this.SuspendLayout();
@@ -428,42 +428,6 @@
             this.dgvCadastroCliente.Size = new System.Drawing.Size(780, 191);
             this.dgvCadastroCliente.TabIndex = 69;
             // 
-            // txtClienteCidade
-            // 
-            this.txtClienteCidade.Location = new System.Drawing.Point(102, 226);
-            this.txtClienteCidade.Name = "txtClienteCidade";
-            this.txtClienteCidade.Size = new System.Drawing.Size(249, 20);
-            this.txtClienteCidade.TabIndex = 109;
-            // 
-            // lblClienteCidade
-            // 
-            this.lblClienteCidade.AutoSize = true;
-            this.lblClienteCidade.Location = new System.Drawing.Point(49, 231);
-            this.lblClienteCidade.Name = "lblClienteCidade";
-            this.lblClienteCidade.Size = new System.Drawing.Size(50, 13);
-            this.lblClienteCidade.TabIndex = 108;
-            this.lblClienteCidade.Text = "CIDADE:";
-            // 
-            // lblClienteBancoSituacao
-            // 
-            this.lblClienteBancoSituacao.AutoSize = true;
-            this.lblClienteBancoSituacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClienteBancoSituacao.ForeColor = System.Drawing.Color.Red;
-            this.lblClienteBancoSituacao.Location = new System.Drawing.Point(734, 7);
-            this.lblClienteBancoSituacao.Name = "lblClienteBancoSituacao";
-            this.lblClienteBancoSituacao.Size = new System.Drawing.Size(58, 13);
-            this.lblClienteBancoSituacao.TabIndex = 111;
-            this.lblClienteBancoSituacao.Text = "OFFLINE";
-            // 
-            // lblClienteBanco
-            // 
-            this.lblClienteBanco.AutoSize = true;
-            this.lblClienteBanco.Location = new System.Drawing.Point(685, 7);
-            this.lblClienteBanco.Name = "lblClienteBanco";
-            this.lblClienteBanco.Size = new System.Drawing.Size(47, 13);
-            this.lblClienteBanco.TabIndex = 110;
-            this.lblClienteBanco.Text = "BANCO:";
-            // 
             // id
             // 
             this.id.HeaderText = "ID";
@@ -558,13 +522,49 @@
             // 
             this.LIMITE_DE_CREDITO.HeaderText = "LIMITE DE CRÉDITO";
             this.LIMITE_DE_CREDITO.Name = "LIMITE_DE_CREDITO";
-            this.LIMITE_DE_CREDITO.Width = 81;
+            this.LIMITE_DE_CREDITO.Width = 124;
             // 
             // STATUS
             // 
             this.STATUS.HeaderText = "STATUS";
             this.STATUS.Name = "STATUS";
             this.STATUS.Width = 75;
+            // 
+            // txtClienteCidade
+            // 
+            this.txtClienteCidade.Location = new System.Drawing.Point(102, 226);
+            this.txtClienteCidade.Name = "txtClienteCidade";
+            this.txtClienteCidade.Size = new System.Drawing.Size(249, 20);
+            this.txtClienteCidade.TabIndex = 109;
+            // 
+            // lblClienteCidade
+            // 
+            this.lblClienteCidade.AutoSize = true;
+            this.lblClienteCidade.Location = new System.Drawing.Point(49, 231);
+            this.lblClienteCidade.Name = "lblClienteCidade";
+            this.lblClienteCidade.Size = new System.Drawing.Size(50, 13);
+            this.lblClienteCidade.TabIndex = 108;
+            this.lblClienteCidade.Text = "CIDADE:";
+            // 
+            // lblClienteBancoSituacao
+            // 
+            this.lblClienteBancoSituacao.AutoSize = true;
+            this.lblClienteBancoSituacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClienteBancoSituacao.ForeColor = System.Drawing.Color.Red;
+            this.lblClienteBancoSituacao.Location = new System.Drawing.Point(734, 7);
+            this.lblClienteBancoSituacao.Name = "lblClienteBancoSituacao";
+            this.lblClienteBancoSituacao.Size = new System.Drawing.Size(58, 13);
+            this.lblClienteBancoSituacao.TabIndex = 111;
+            this.lblClienteBancoSituacao.Text = "OFFLINE";
+            // 
+            // lblClienteBanco
+            // 
+            this.lblClienteBanco.AutoSize = true;
+            this.lblClienteBanco.Location = new System.Drawing.Point(685, 7);
+            this.lblClienteBanco.Name = "lblClienteBanco";
+            this.lblClienteBanco.Size = new System.Drawing.Size(47, 13);
+            this.lblClienteBanco.TabIndex = 110;
+            this.lblClienteBanco.Text = "BANCO:";
             // 
             // frmCliente
             // 
@@ -612,6 +612,7 @@
             this.Controls.Add(this.lblCadastroClienteNome);
             this.Controls.Add(this.txtCadastroClienteNome);
             this.Controls.Add(this.lblCadastroCliente);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Clientes";

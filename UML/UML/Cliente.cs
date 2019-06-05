@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace UML
 {
@@ -11,6 +12,7 @@ namespace UML
     {
         private int id { get; set; }
         public string nome { get; set; }
+        public string lougradouro { get; set; }
         public string endereco { get; set; }
         public int numero { get; set; }
         public string complemento { get; set; }
@@ -26,11 +28,11 @@ namespace UML
         public string rg { get; set; }
         public string cidade { get; set; }
 
-        public void Cadastrar(string nome, string endereco, string numero, string complemento, string bairro, string cep, string estado, string telefone, string celular, string filiacao, string status, string limiteDeCredito, string cpf, string rg, string cidade)
+        public void Cadastrar(string nome, string lougradouro, string endereco, string numero, string complemento, string bairro, string cep, string estado, string telefone, string celular, string filiacao, string status, string limiteDeCredito, string cpf, string rg, string cidade)
         {
             frmCliente cliente = new frmCliente();
-            //cliente.dgvCadastroCliente.Columns.Add(nome);
-            cliente.dgvCadastroCliente.Rows.Add(nome);
+            cliente.dgvCadastroCliente.Rows[0].Cells["ID"].Value = 0;
+            
         }
 
         public void Editar(int id)

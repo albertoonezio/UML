@@ -54,13 +54,7 @@
             this.txtPedidoValorUnidade = new System.Windows.Forms.TextBox();
             this.txtPedidoValorTotal = new System.Windows.Forms.TextBox();
             this.btnCadastroPedidoCriar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOME_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOME_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VALOR_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STATUS_PEDIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCadastroPedido = new System.Windows.Forms.DataGridView();
             this.lblPedidoBancoSituacao = new System.Windows.Forms.Label();
             this.lblPedidoBanco = new System.Windows.Forms.Label();
             this.btnCadastroPedidoIncluir = new System.Windows.Forms.Button();
@@ -69,7 +63,7 @@
             this.cboPedidoNomeProduto = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudPedidoID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPedidoQuantidade)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCadastroPedido)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCadastroPedidoDeletar
@@ -302,57 +296,15 @@
             this.btnCadastroPedidoCriar.TabIndex = 91;
             this.btnCadastroPedidoCriar.Text = "CRIAR";
             this.btnCadastroPedidoCriar.UseVisualStyleBackColor = true;
+            this.btnCadastroPedidoCriar.Click += new System.EventHandler(this.btnCadastroPedidoCriar_Click);
             // 
-            // dataGridView1
+            // dgvCadastroPedido
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.NOME_CLIENTE,
-            this.NOME_PRODUTO,
-            this.QUANTIDADE,
-            this.VALOR_TOTAL,
-            this.STATUS_PEDIDO});
-            this.dataGridView1.Location = new System.Drawing.Point(226, 239);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(567, 172);
-            this.dataGridView1.TabIndex = 92;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Width = 30;
-            // 
-            // NOME_CLIENTE
-            // 
-            this.NOME_CLIENTE.HeaderText = "NOME CLIENTE";
-            this.NOME_CLIENTE.Name = "NOME_CLIENTE";
-            this.NOME_CLIENTE.Width = 250;
-            // 
-            // NOME_PRODUTO
-            // 
-            this.NOME_PRODUTO.HeaderText = "NOME PRODUTO";
-            this.NOME_PRODUTO.Name = "NOME_PRODUTO";
-            this.NOME_PRODUTO.Width = 250;
-            // 
-            // QUANTIDADE
-            // 
-            this.QUANTIDADE.HeaderText = "QUANTIDADE";
-            this.QUANTIDADE.Name = "QUANTIDADE";
-            this.QUANTIDADE.Width = 50;
-            // 
-            // VALOR_TOTAL
-            // 
-            this.VALOR_TOTAL.HeaderText = "VALOR TOTAL";
-            this.VALOR_TOTAL.Name = "VALOR_TOTAL";
-            this.VALOR_TOTAL.Width = 60;
-            // 
-            // STATUS_PEDIDO
-            // 
-            this.STATUS_PEDIDO.HeaderText = "STATUS PEDIDO";
-            this.STATUS_PEDIDO.Name = "STATUS_PEDIDO";
-            this.STATUS_PEDIDO.Width = 80;
+            this.dgvCadastroPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCadastroPedido.Location = new System.Drawing.Point(226, 239);
+            this.dgvCadastroPedido.Name = "dgvCadastroPedido";
+            this.dgvCadastroPedido.Size = new System.Drawing.Size(567, 172);
+            this.dgvCadastroPedido.TabIndex = 92;
             // 
             // lblPedidoBancoSituacao
             // 
@@ -419,7 +371,7 @@
             this.Controls.Add(this.btnCadastroPedidoIncluir);
             this.Controls.Add(this.lblPedidoBancoSituacao);
             this.Controls.Add(this.lblPedidoBanco);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvCadastroPedido);
             this.Controls.Add(this.btnCadastroPedidoCriar);
             this.Controls.Add(this.txtPedidoValorTotal);
             this.Controls.Add(this.txtPedidoValorUnidade);
@@ -446,12 +398,13 @@
             this.Controls.Add(this.lblPedidoNomeCliente);
             this.Controls.Add(this.txtPedidoNomeCliente);
             this.Controls.Add(this.lblPedido);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmPedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Pedidos";
             ((System.ComponentModel.ISupportInitialize)(this.nudPedidoID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPedidoQuantidade)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCadastroPedido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -462,40 +415,34 @@
         private System.Windows.Forms.Button btnCadastroPedidoEditar;
         private System.Windows.Forms.Button btnCadastroPedidoSalvar;
         private System.Windows.Forms.Label lblPedidoID;
-        private System.Windows.Forms.NumericUpDown nudPedidoID;
         private System.Windows.Forms.Label lblPedidoNomeCliente;
-        private System.Windows.Forms.TextBox txtPedidoNomeCliente;
         private System.Windows.Forms.Label lblPedido;
         private System.Windows.Forms.Label lblPedidoNomeProduto;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label lblPedidoQuantidade;
-        private System.Windows.Forms.NumericUpDown nudPedidoQuantidade;
         private System.Windows.Forms.Label lblPedidoDataElaboracao;
         private System.Windows.Forms.Label lblPedidoStatusPedido;
         private System.Windows.Forms.Label lblPedidoStatusProduto;
         private System.Windows.Forms.Label lblPedidoStatusCliente;
-        private System.Windows.Forms.TextBox txtPedidoStatusCliente;
-        private System.Windows.Forms.TextBox txtPedidoStatusProduto;
-        private System.Windows.Forms.TextBox txtPedidoStatusPedido;
         private System.Windows.Forms.Label lblPedidoValorUnidade;
         private System.Windows.Forms.Label lblPedidoValorTotal;
         private System.Windows.Forms.Button btnPedidoValidarCliente;
         private System.Windows.Forms.Button btnPedidoValidarProduto;
-        private System.Windows.Forms.TextBox txtPedidoValorUnidade;
-        private System.Windows.Forms.TextBox txtPedidoValorTotal;
         private System.Windows.Forms.Button btnCadastroPedidoCriar;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NOME_CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NOME_PRODUTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QUANTIDADE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VALOR_TOTAL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STATUS_PEDIDO;
         private System.Windows.Forms.Label lblPedidoBancoSituacao;
         private System.Windows.Forms.Label lblPedidoBanco;
         private System.Windows.Forms.Button btnCadastroPedidoIncluir;
         private System.Windows.Forms.Button btnCadastroPedidoRemover;
-        private System.Windows.Forms.ListBox lbPedidoListaProdutos;
-        private System.Windows.Forms.ComboBox cboPedidoNomeProduto;
+        public System.Windows.Forms.NumericUpDown nudPedidoID;
+        public System.Windows.Forms.TextBox txtPedidoNomeCliente;
+        public System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        public System.Windows.Forms.NumericUpDown nudPedidoQuantidade;
+        public System.Windows.Forms.TextBox txtPedidoStatusCliente;
+        public System.Windows.Forms.TextBox txtPedidoStatusProduto;
+        public System.Windows.Forms.TextBox txtPedidoStatusPedido;
+        public System.Windows.Forms.TextBox txtPedidoValorUnidade;
+        public System.Windows.Forms.TextBox txtPedidoValorTotal;
+        public System.Windows.Forms.DataGridView dgvCadastroPedido;
+        public System.Windows.Forms.ListBox lbPedidoListaProdutos;
+        public System.Windows.Forms.ComboBox cboPedidoNomeProduto;
     }
 }

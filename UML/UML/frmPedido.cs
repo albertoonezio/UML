@@ -16,5 +16,13 @@ namespace UML
         {
             InitializeComponent();
         }
+
+        private void btnCadastroPedidoCriar_Click(object sender, EventArgs e)
+        {
+            int id = 0;
+            double quantidade = Convert.ToDouble(txtPedidoNomeCliente.Text);
+            Pedido pedido = new Pedido();
+            pedido.Criar(id, quantidade);
+        }
     }
 }
