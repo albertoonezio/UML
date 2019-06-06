@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UML.Entidade;
 
 namespace UML
 {
@@ -10,6 +11,7 @@ namespace UML
     {
         public int quantidade { get; set; }
         public string nome { get; set; }
+        public Pedido pedido { get; set; }
 
         public void VerificarEstoque()
         {

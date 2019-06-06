@@ -14,6 +14,7 @@ namespace UML
         public double valor { get; set; }
         public DateTime dataFabricacao { get; set; }
         public DateTime dataVencimento { get; set; }
+        public Fornecedor fornecedor { get; set; }
 
         public void Cadastrar(string nome)
         {

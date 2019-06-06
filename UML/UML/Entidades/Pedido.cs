@@ -12,6 +12,7 @@ namespace UML.Entidade
         private int id { get; set; }
         public DateTime dataElaboracao { get; set; }
         public double quantidade { get; set; }
+        public Cliente cliente { get; set; }
 
         public void Criar(int id, double quantidade)
         {
