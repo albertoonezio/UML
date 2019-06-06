@@ -22,8 +22,8 @@ namespace UML.Entidade
         public string Telefone { get; set; }
         public string Celular { get; set; }
         public string Filiacao { get; set; }
-        public string Status { get; set; }
-        public double LimiteDeCredito { get; set; }
+        public string Status_Cliente { get; set; }
+        public double Limite_De_Credito { get; set; }
         public string Cpf { get; set; }
         public string Rg { get; set; }
         public string Cidade { get; set; }

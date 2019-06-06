@@ -17,7 +17,7 @@ namespace UML.Entidade
         public DateTime DataVencimento { get; set; }
         public virtual Fornecedor Fornecedor { get; set; }
         public int FornecedorId { get; set; }
-        public virtual IList<Pedido> Pedidos { get; set; }
+        //public virtual IList<Pedido> Pedidos { get; set; }
 
         public void Cadastrar(string nome)
         {

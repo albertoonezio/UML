@@ -113,8 +113,8 @@ namespace UML
                 Telefone = mtbCadastroClienteTelefone.Text,
                 Celular = mtbCadastroClienteCelular.Text,
                 Filiacao = txtCadastroClienteFiliacao.Text,
-                Status = cboCadastroClienteStatus.Text,
-                LimiteDeCredito = Convert.ToDouble(txtCadastroClienteLimiteCredito.Text),
+                Status_Cliente = cboCadastroClienteStatus.Text,
+                Limite_De_Credito = Convert.ToDouble(txtCadastroClienteLimiteCredito.Text),
                 Cpf = mtbCadastroClienteCpf.Text,
                 Rg = txtCadastroClienteRg.Text,
                 Cidade = txtClienteCidade.Text

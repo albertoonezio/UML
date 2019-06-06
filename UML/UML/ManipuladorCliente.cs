@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using UML.Entidade;
 
 namespace UML
@@ -20,6 +21,8 @@ namespace UML
         {
             contexto.Cliente.Add(cliente);
             contexto.SaveChanges();
+
+            MessageBox.Show("Cliente cadastrado com sucesso!");
         }
     }
 }

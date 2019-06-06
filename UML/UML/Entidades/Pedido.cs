@@ -16,7 +16,7 @@ namespace UML.Entidade
         public int ClienteId { get; set; }
         public virtual Produto Produto { get; set; }
         public int ProdutoId { get; set; }
-        public IList<Produto> Produtos { get; set; }
+        //public IList<Produto> Produtos { get; set; }
 
         public void Criar(int id, double quantidade)
         {
