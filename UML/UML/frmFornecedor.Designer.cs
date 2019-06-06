@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFornecedor));
             this.btnFornecedorCriar = new System.Windows.Forms.Button();
             this.btnFornecedorDeletar = new System.Windows.Forms.Button();
             this.btnFornecedorEditar = new System.Windows.Forms.Button();
@@ -510,6 +511,7 @@
             this.Controls.Add(this.nudFornecedorID);
             this.Controls.Add(this.lblCadastroFornecedor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmFornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Fornecedor";

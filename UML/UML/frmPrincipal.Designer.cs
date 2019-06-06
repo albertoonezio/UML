@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.lblControleGeral = new System.Windows.Forms.Label();
             this.btnControleGeralCliente = new System.Windows.Forms.Button();
             this.btnControleGeralPedido = new System.Windows.Forms.Button();
@@ -149,6 +150,7 @@
             this.Controls.Add(this.btnControleGeralCliente);
             this.Controls.Add(this.lblControleGeral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Controle Geral";

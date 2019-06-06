@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UML.Entidade;
 
 namespace UML
 {
@@ -39,28 +40,9 @@ namespace UML
 
             try
             {
-                string connectionString = "Provider=SQLNCLI11;Data Source=SQEST112\\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=CONTROLE_GERAL";
-                SqlConnection sqlConn = new SqlConnection(connectionString); 
-
-                sqlConn.Open();
-
-                //criando o select e o objeto de consulta
-                string sql = "select * from clientes";
-                SqlCommand cmd = new SqlCommand(sql, sqlConn);
-                cmd.Connection = sqlConn;
-                cmd.CommandText = sql;
-
-                // cria o dataadapter...
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                adapter.SelectCommand = cmd;
-
-                // preenche o dataset...
-                DataSet dataSet = new DataSet();
-                adapter.Fill(dataSet);
-
-                dgvCadastroCliente.DataSource = dataSet;
-                dgvCadastroCliente.DataMember = dataSet.Tables[0].TableName;
-                sqlConn.Close();
+                IDbConnection con = new SqlConnection();
+                IDbCommand comando = con.CreateCommand();
+                comando.CommandText = "select * from CLIENTE";
 
                 lblClienteBancoSituacao.Text = "ONLINE";
                 lblClienteBancoSituacao.ForeColor = Color.ForestGreen;
@@ -96,25 +78,49 @@ namespace UML
 
         private void btnCadastroClienteSalvar_Click(object sender, EventArgs e)
         {
-            string nome = txtCadastroClienteNome.Text;
-            string lougradouro = cboCadastroClienteLogadouro.Text;
-            string endereco = txtCadastroClienteEndereco.Text;
-            string numero = txtCadastroClienteNumero.Text;
-            string complemento = txtCadastroClienteComplemento.Text;
-            string bairro = txtCadastroClienteBairro.Text;
-            string cep = mtbCadastroClienteCep.Text;
-            string estado = cboCadastroClienteEstado.Text;
-            string telefone = mtbCadastroClienteTelefone.Text;
-            string celular = mtbCadastroClienteCelular.Text;
-            string filiacao = txtCadastroClienteFiliacao.Text;
-            string status = cboCadastroClienteStatus.Text;
-            string limiteDeCredito = txtCadastroClienteLimiteCredito.Text;
-            string cpf = mtbCadastroClienteCpf.Text;
-            string rg = txtCadastroClienteRg.Text;
-            string cidade = txtClienteCidade.Text;
+            ValidarCampos validar = new ValidarCampos();
+            validar.ValidarCliente(
+                Convert.ToInt32(nudCadastroClienteID.Value),
+                txtCadastroClienteNome.Text,
+                cboCadastroClienteLogadouro.Text,
+                txtCadastroClienteEndereco.Text,
+                txtCadastroClienteNumero.Text,
+                txtCadastroClienteComplemento.Text,
+                txtCadastroClienteBairro.Text,
+                mtbCadastroClienteCep.Text,
+                cboCadastroClienteEstado.Text,
+                mtbCadastroClienteTelefone.Text,
+                mtbCadastroClienteCelular.Text,
+                txtCadastroClienteFiliacao.Text,
+                cboCadastroClienteStatus.Text,
+                txtCadastroClienteLimiteCredito.Text,
+                mtbCadastroClienteCpf.Text,
+                txtCadastroClienteRg.Text,
+                txtClienteCidade.Text
+                );
+            ManipuladorCliente manipular = new ManipuladorCliente();
+            Cliente cliente = new Cliente()
+            {
+                //ID = Convert.ToInt32(nudCadastroClienteID.Value),
+                Nome = txtCadastroClienteNome.Text,
+                Lougradouro = cboCadastroClienteLogadouro.Text,
+                Endereco = txtCadastroClienteEndereco.Text,
+                Numero = txtCadastroClienteNumero.Text,
+                Complemento = txtCadastroClienteComplemento.Text,
+                Bairro = txtCadastroClienteBairro.Text,
+                Cep = mtbCadastroClienteCep.Text,
+                Estado = cboCadastroClienteEstado.Text,
+                Telefone = mtbCadastroClienteTelefone.Text,
+                Celular = mtbCadastroClienteCelular.Text,
+                Filiacao = txtCadastroClienteFiliacao.Text,
+                Status = cboCadastroClienteStatus.Text,
+                LimiteDeCredito = Convert.ToDouble(txtCadastroClienteLimiteCredito.Text),
+                Cpf = mtbCadastroClienteCpf.Text,
+                Rg = txtCadastroClienteRg.Text,
+                Cidade = txtClienteCidade.Text
+            };
 
-            Cliente cliente = new Cliente();
-            cliente.Cadastrar(nome, lougradouro, endereco, numero, complemento, bairro, cep, estado, telefone, celular, filiacao, status, limiteDeCredito, cpf, rg, cidade);
+            manipular.Salvar(cliente);
         }
 
         private void btnCadastroClienteEditar_Click(object sender, EventArgs e)

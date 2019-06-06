@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedido));
             this.btnCadastroPedidoDeletar = new System.Windows.Forms.Button();
             this.btnCadastroPedidoEditar = new System.Windows.Forms.Button();
             this.btnCadastroPedidoSalvar = new System.Windows.Forms.Button();
@@ -399,6 +400,7 @@
             this.Controls.Add(this.txtPedidoNomeCliente);
             this.Controls.Add(this.lblPedido);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Pedidos";

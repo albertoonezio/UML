@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UML
 {
-    class QuantidadePedido
+    public class QuantidadePedido
     {
         public int quantidade { get; set; }
         public string nome { get; set; }

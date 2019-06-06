@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProduto));
             this.btnProdutoCriar = new System.Windows.Forms.Button();
             this.btnProdutoDeletar = new System.Windows.Forms.Button();
             this.btnProdutoEditar = new System.Windows.Forms.Button();
@@ -333,6 +334,7 @@
             this.Controls.Add(this.txtProdutoNome);
             this.Controls.Add(this.lblCadastroProduto);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmProduto";

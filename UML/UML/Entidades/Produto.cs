@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UML
 {
-    class Produto
+    public class Produto
     {
         private int id { get; set; }
         public string nome { get; set; }
