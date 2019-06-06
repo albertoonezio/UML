@@ -9,16 +9,20 @@ namespace UML.Entidade
 {
     public class Pedido
     {
-        private int id { get; set; }
-        public DateTime dataElaboracao { get; set; }
-        public double quantidade { get; set; }
-        public Cliente cliente { get; set; }
+        public int Id { get; set; }
+        public DateTime DataElaboracao { get; set; }
+        public double Quantidade { get; set; }
+        public virtual Cliente cliente { get; set; }
+        public int ClienteId { get; set; }
+        public virtual Produto Produto { get; set; }
+        public int ProdutoId { get; set; }
+        public IList<Produto> Produtos { get; set; }
 
         public void Criar(int id, double quantidade)
         {
             frmPedido pedido = new frmPedido();
             List<Pedido> listaPedido = new List<Pedido>();
-            listaPedido.Add(new Pedido() { id = id, quantidade = quantidade });
+            listaPedido.Add(new Pedido() { Id = id, Quantidade = quantidade });
             pedido.dgvCadastroPedido.DataSource = listaPedido;
             pedido.dgvCadastroPedido.Rows[0].Cells[0].Value = id;
         }

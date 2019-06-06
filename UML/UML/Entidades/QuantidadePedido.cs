@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using UML.Entidade;
 
-namespace UML
+namespace UML.Entidade
 {
     public class QuantidadePedido
     {
-        public int quantidade { get; set; }
-        public string nome { get; set; }
-        public Pedido pedido { get; set; }
+        public int Id { get; set; }
+        public int Quantidade { get; set; }
+        public string Nome { get; set; }
+        public virtual Pedido Pedido { get; set; }
+        public int PedidoId { get; set; }
 
         public void VerificarEstoque()
         {

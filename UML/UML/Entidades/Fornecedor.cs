@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UML
+namespace UML.Entidade
 {
     public class Fornecedor
     {
-        private string cnpj { get; set; }
-        public string nome { get; set; }
-        public string endereco { get; set; }
-        public string telefone { get; set; }
+        public int Id { get; set; }
+        public string Cnpj { get; set; }
+        public string Nome { get; set; }
+        public string Endereco { get; set; }
+        public string Telefone { get; set; }
 
         public void Cadastrar()
         {
