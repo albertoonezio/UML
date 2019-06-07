@@ -90,6 +90,7 @@
             this.btnFornecedorCriar.TabIndex = 81;
             this.btnFornecedorCriar.Text = "CRIAR";
             this.btnFornecedorCriar.UseVisualStyleBackColor = true;
+            this.btnFornecedorCriar.Click += new System.EventHandler(this.btnFornecedorCriar_Click);
             // 
             // btnFornecedorDeletar
             // 
@@ -117,6 +118,7 @@
             this.btnFornecedorSalvar.TabIndex = 78;
             this.btnFornecedorSalvar.Text = "SALVAR";
             this.btnFornecedorSalvar.UseVisualStyleBackColor = true;
+            this.btnFornecedorSalvar.Click += new System.EventHandler(this.btnFornecedorSalvar_Click);
             // 
             // lblFornecedorID
             // 
@@ -515,6 +517,7 @@
             this.Name = "frmFornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Fornecedor";
+            this.Load += new System.EventHandler(this.frmFornecedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudFornecedorID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

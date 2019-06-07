@@ -107,14 +107,14 @@
             this.cboCadastroClienteStatus.Location = new System.Drawing.Point(633, 81);
             this.cboCadastroClienteStatus.Name = "cboCadastroClienteStatus";
             this.cboCadastroClienteStatus.Size = new System.Drawing.Size(129, 21);
-            this.cboCadastroClienteStatus.TabIndex = 62;
+            this.cboCadastroClienteStatus.TabIndex = 2;
             // 
             // txtCadastroClienteLimiteCredito
             // 
             this.txtCadastroClienteLimiteCredito.Location = new System.Drawing.Point(162, 453);
             this.txtCadastroClienteLimiteCredito.Name = "txtCadastroClienteLimiteCredito";
             this.txtCadastroClienteLimiteCredito.Size = new System.Drawing.Size(134, 20);
-            this.txtCadastroClienteLimiteCredito.TabIndex = 61;
+            this.txtCadastroClienteLimiteCredito.TabIndex = 15;
             // 
             // mtbCadastroClienteCelular
             // 
@@ -122,7 +122,7 @@
             this.mtbCadastroClienteCelular.Mask = "(99) 9 0000-0000";
             this.mtbCadastroClienteCelular.Name = "mtbCadastroClienteCelular";
             this.mtbCadastroClienteCelular.Size = new System.Drawing.Size(88, 20);
-            this.mtbCadastroClienteCelular.TabIndex = 60;
+            this.mtbCadastroClienteCelular.TabIndex = 14;
             // 
             // lblCadastroClienteCelular
             // 
@@ -138,7 +138,7 @@
             this.txtCadastroClienteBairro.Location = new System.Drawing.Point(580, 189);
             this.txtCadastroClienteBairro.Name = "txtCadastroClienteBairro";
             this.txtCadastroClienteBairro.Size = new System.Drawing.Size(182, 20);
-            this.txtCadastroClienteBairro.TabIndex = 58;
+            this.txtCadastroClienteBairro.TabIndex = 9;
             // 
             // lblCadastroClienteCep
             // 
@@ -164,21 +164,21 @@
             this.mtbCadastroClienteCep.Mask = "00000-999";
             this.mtbCadastroClienteCep.Name = "mtbCadastroClienteCep";
             this.mtbCadastroClienteCep.Size = new System.Drawing.Size(59, 20);
-            this.mtbCadastroClienteCep.TabIndex = 55;
+            this.mtbCadastroClienteCep.TabIndex = 12;
             // 
             // txtCadastroClienteComplemento
             // 
             this.txtCadastroClienteComplemento.Location = new System.Drawing.Point(310, 189);
             this.txtCadastroClienteComplemento.Name = "txtCadastroClienteComplemento";
             this.txtCadastroClienteComplemento.Size = new System.Drawing.Size(218, 20);
-            this.txtCadastroClienteComplemento.TabIndex = 54;
+            this.txtCadastroClienteComplemento.TabIndex = 8;
             // 
             // txtCadastroClienteNumero
             // 
             this.txtCadastroClienteNumero.Location = new System.Drawing.Point(110, 189);
             this.txtCadastroClienteNumero.Name = "txtCadastroClienteNumero";
             this.txtCadastroClienteNumero.Size = new System.Drawing.Size(100, 20);
-            this.txtCadastroClienteNumero.TabIndex = 53;
+            this.txtCadastroClienteNumero.TabIndex = 7;
             // 
             // lblCadastroClienteBairro
             // 
@@ -218,7 +218,7 @@
             this.cboCadastroClienteLogadouro.Location = new System.Drawing.Point(119, 154);
             this.cboCadastroClienteLogadouro.Name = "cboCadastroClienteLogadouro";
             this.cboCadastroClienteLogadouro.Size = new System.Drawing.Size(91, 21);
-            this.cboCadastroClienteLogadouro.TabIndex = 49;
+            this.cboCadastroClienteLogadouro.TabIndex = 5;
             // 
             // btnCadastroClienteDeletar
             // 
@@ -245,7 +245,7 @@
             this.btnCadastroClienteSalvar.Location = new System.Drawing.Point(527, 449);
             this.btnCadastroClienteSalvar.Name = "btnCadastroClienteSalvar";
             this.btnCadastroClienteSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnCadastroClienteSalvar.TabIndex = 46;
+            this.btnCadastroClienteSalvar.TabIndex = 16;
             this.btnCadastroClienteSalvar.Text = "SALVAR";
             this.btnCadastroClienteSalvar.UseVisualStyleBackColor = true;
             this.btnCadastroClienteSalvar.Click += new System.EventHandler(this.btnCadastroClienteSalvar_Click);
@@ -265,7 +265,7 @@
             this.mtbCadastroClienteTelefone.Mask = "(99) 0000-0000";
             this.mtbCadastroClienteTelefone.Name = "mtbCadastroClienteTelefone";
             this.mtbCadastroClienteTelefone.Size = new System.Drawing.Size(83, 20);
-            this.mtbCadastroClienteTelefone.TabIndex = 44;
+            this.mtbCadastroClienteTelefone.TabIndex = 13;
             // 
             // lblCadastroClienteTelefone
             // 
@@ -299,7 +299,7 @@
             this.txtCadastroClienteFiliacao.Location = new System.Drawing.Point(604, 118);
             this.txtCadastroClienteFiliacao.Name = "txtCadastroClienteFiliacao";
             this.txtCadastroClienteFiliacao.Size = new System.Drawing.Size(158, 20);
-            this.txtCadastroClienteFiliacao.TabIndex = 40;
+            this.txtCadastroClienteFiliacao.TabIndex = 4;
             // 
             // lblCadastroClienteEndereco
             // 
@@ -315,7 +315,7 @@
             this.txtCadastroClienteEndereco.Location = new System.Drawing.Point(215, 154);
             this.txtCadastroClienteEndereco.Name = "txtCadastroClienteEndereco";
             this.txtCadastroClienteEndereco.Size = new System.Drawing.Size(443, 20);
-            this.txtCadastroClienteEndereco.TabIndex = 38;
+            this.txtCadastroClienteEndereco.TabIndex = 6;
             // 
             // lblCadastroClienteID
             // 
@@ -348,7 +348,7 @@
             this.txtCadastroClienteNome.Location = new System.Drawing.Point(90, 120);
             this.txtCadastroClienteNome.Name = "txtCadastroClienteNome";
             this.txtCadastroClienteNome.Size = new System.Drawing.Size(460, 20);
-            this.txtCadastroClienteNome.TabIndex = 34;
+            this.txtCadastroClienteNome.TabIndex = 3;
             // 
             // lblCadastroCliente
             // 
@@ -357,7 +357,7 @@
             this.lblCadastroCliente.Location = new System.Drawing.Point(47, 27);
             this.lblCadastroCliente.Name = "lblCadastroCliente";
             this.lblCadastroCliente.Size = new System.Drawing.Size(710, 40);
-            this.lblCadastroCliente.TabIndex = 33;
+            this.lblCadastroCliente.TabIndex = 0;
             this.lblCadastroCliente.Text = "Cadastro Clientes";
             this.lblCadastroCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -367,7 +367,7 @@
             this.cboCadastroClienteEstado.Location = new System.Drawing.Point(712, 151);
             this.cboCadastroClienteEstado.Name = "cboCadastroClienteEstado";
             this.cboCadastroClienteEstado.Size = new System.Drawing.Size(48, 21);
-            this.cboCadastroClienteEstado.TabIndex = 64;
+            this.cboCadastroClienteEstado.TabIndex = 11;
             // 
             // lblCadastroClienteCpf
             // 
@@ -384,7 +384,7 @@
             this.mtbCadastroClienteCpf.Mask = "999.999.999-99";
             this.mtbCadastroClienteCpf.Name = "mtbCadastroClienteCpf";
             this.mtbCadastroClienteCpf.Size = new System.Drawing.Size(82, 20);
-            this.mtbCadastroClienteCpf.TabIndex = 66;
+            this.mtbCadastroClienteCpf.TabIndex = 0;
             // 
             // lblCadastroClienteRg
             // 
@@ -400,7 +400,7 @@
             this.txtCadastroClienteRg.Location = new System.Drawing.Point(468, 82);
             this.txtCadastroClienteRg.Name = "txtCadastroClienteRg";
             this.txtCadastroClienteRg.Size = new System.Drawing.Size(100, 20);
-            this.txtCadastroClienteRg.TabIndex = 68;
+            this.txtCadastroClienteRg.TabIndex = 1;
             // 
             // dgvCadastroCliente
             // 
@@ -536,7 +536,7 @@
             this.txtClienteCidade.Location = new System.Drawing.Point(102, 226);
             this.txtClienteCidade.Name = "txtClienteCidade";
             this.txtClienteCidade.Size = new System.Drawing.Size(249, 20);
-            this.txtClienteCidade.TabIndex = 109;
+            this.txtClienteCidade.TabIndex = 10;
             // 
             // lblClienteCidade
             // 

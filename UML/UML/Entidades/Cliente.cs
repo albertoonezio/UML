@@ -10,7 +10,7 @@ namespace UML.Entidade
 {
     public class Cliente
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         public string Nome { get; set; }
         public string Lougradouro { get; set; }
         public string Endereco { get; set; }

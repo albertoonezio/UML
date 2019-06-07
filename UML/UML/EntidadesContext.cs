@@ -13,11 +13,11 @@ namespace UML
 {
     public class EntidadesContext : DbContext
     {
-        public Microsoft.EntityFrameworkCore.DbSet<Cliente> Cliente { get; set; }
-        public Microsoft.EntityFrameworkCore.DbSet<Pedido> Pedido { get; set; }
-        public Microsoft.EntityFrameworkCore.DbSet<Produto> Produto { get; set; }
+        public Microsoft.EntityFrameworkCore.DbSet<Cliente> Clientes { get; set; }
+        public Microsoft.EntityFrameworkCore.DbSet<Pedido> Pedidos { get; set; }
+        public Microsoft.EntityFrameworkCore.DbSet<Produto> Produtos { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<QuantidadePedido> QuantidadePedidos { get; set; }
-        public Microsoft.EntityFrameworkCore.DbSet<Fornecedor> Fornecedor { get; set; }
+        public Microsoft.EntityFrameworkCore.DbSet<Fornecedor> Fornecedores { get; set; }
 
        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

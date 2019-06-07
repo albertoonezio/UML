@@ -8,21 +8,21 @@ using UML.Entidade;
 
 namespace UML
 {
-    class ManipuladorCliente
+    class ManipuladorFornecedor
     {
         private EntidadesContext contexto;
 
-        public ManipuladorCliente()
+        public ManipuladorFornecedor()
         {
             contexto = new EntidadesContext();
         }
 
-        public void Salvar(Cliente cliente)
+        public void Salvar(Fornecedor fornecedor)
         {
-            contexto.Clientes.Add(cliente);
+            contexto.Fornecedores.Add(fornecedor);
             contexto.SaveChanges();
 
-            MessageBox.Show("Cliente cadastrado com sucesso!");
+            MessageBox.Show("Fornecedor cadastrado com sucesso!");
         }
     }
 }

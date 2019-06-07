@@ -37,23 +37,6 @@ namespace UML
             mtbCadastroClienteTelefone.Enabled = false;
             mtbCadastroClienteCelular.Enabled = false;
             txtCadastroClienteLimiteCredito.Enabled = false;
-
-            try
-            {
-                IDbConnection con = new SqlConnection();
-                IDbCommand comando = con.CreateCommand();
-                comando.CommandText = "select * from CLIENTE";
-
-                lblClienteBancoSituacao.Text = "ONLINE";
-                lblClienteBancoSituacao.ForeColor = Color.ForestGreen;
-            }
-            catch (Exception ex)
-            {
-
-                lblClienteBancoSituacao.Text = "OFFLINE";
-                lblClienteBancoSituacao.ForeColor = Color.Red;
-                MessageBox.Show("Banco Não Conectado" + ex.Message);
-            }
         }
 
         private void btnCadastroClienteCriar_Click(object sender, EventArgs e)
@@ -98,10 +81,10 @@ namespace UML
                 txtCadastroClienteRg.Text,
                 txtClienteCidade.Text
                 );
+
             ManipuladorCliente manipular = new ManipuladorCliente();
             Cliente cliente = new Cliente()
             {
-                //ID = Convert.ToInt32(nudCadastroClienteID.Value),
                 Nome = txtCadastroClienteNome.Text,
                 Lougradouro = cboCadastroClienteLogadouro.Text,
                 Endereco = txtCadastroClienteEndereco.Text,
