@@ -153,7 +153,7 @@
             this.mtbFornecedorCnpj.Location = new System.Drawing.Point(357, 100);
             this.mtbFornecedorCnpj.Mask = "99.999.999/9999-99";
             this.mtbFornecedorCnpj.Name = "mtbFornecedorCnpj";
-            this.mtbFornecedorCnpj.Size = new System.Drawing.Size(87, 20);
+            this.mtbFornecedorCnpj.Size = new System.Drawing.Size(112, 20);
             this.mtbFornecedorCnpj.TabIndex = 102;
             // 
             // lblFornecedorCnpj

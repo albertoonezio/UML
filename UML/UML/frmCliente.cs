@@ -22,7 +22,7 @@ namespace UML
         private void frmCliente_Load(object sender, EventArgs e)
         {
             mtbCadastroClienteCpf.Enabled = false;
-            txtCadastroClienteRg.Enabled = false;
+            mtbCadastroClienteRg.Enabled = false;
             cboCadastroClienteStatus.Enabled = false;
             txtCadastroClienteNome.Enabled = false;
             txtCadastroClienteFiliacao.Enabled = false;
@@ -42,7 +42,7 @@ namespace UML
         private void btnCadastroClienteCriar_Click(object sender, EventArgs e)
         {
             mtbCadastroClienteCpf.Enabled = true;
-            txtCadastroClienteRg.Enabled = true;
+            mtbCadastroClienteRg.Enabled = true;
             cboCadastroClienteStatus.Enabled = true;
             txtCadastroClienteNome.Enabled = true;
             txtCadastroClienteFiliacao.Enabled = true;
@@ -78,7 +78,7 @@ namespace UML
                 cboCadastroClienteStatus.Text,
                 txtCadastroClienteLimiteCredito.Text,
                 mtbCadastroClienteCpf.Text,
-                txtCadastroClienteRg.Text,
+                mtbCadastroClienteRg.Text,
                 txtClienteCidade.Text
                 );
 
@@ -99,7 +99,7 @@ namespace UML
                 Status_Cliente = cboCadastroClienteStatus.Text,
                 Limite_De_Credito = Convert.ToDouble(txtCadastroClienteLimiteCredito.Text),
                 Cpf = mtbCadastroClienteCpf.Text,
-                Rg = txtCadastroClienteRg.Text,
+                Rg = mtbCadastroClienteRg.Text,
                 Cidade = txtClienteCidade.Text
             };
 

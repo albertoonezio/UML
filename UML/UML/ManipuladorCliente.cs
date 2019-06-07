@@ -8,7 +8,7 @@ using UML.Entidade;
 
 namespace UML
 {
-    class ManipuladorCliente
+    public class ManipuladorCliente
     {
         private EntidadesContext contexto;
 
@@ -19,7 +19,7 @@ namespace UML
 
         public void Salvar(Cliente cliente)
         {
-            contexto.Clientes.Add(cliente);
+            contexto.Cliente.Add(cliente);
             contexto.SaveChanges();
 
             MessageBox.Show("Cliente cadastrado com sucesso!");

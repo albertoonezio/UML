@@ -20,11 +20,7 @@ namespace UML.Entidade
 
         public void Criar(int id, double quantidade)
         {
-            frmPedido pedido = new frmPedido();
-            List<Pedido> listaPedido = new List<Pedido>();
-            listaPedido.Add(new Pedido() { Id = id, Quantidade = quantidade });
-            pedido.dgvCadastroPedido.DataSource = listaPedido;
-            pedido.dgvCadastroPedido.Rows[0].Cells[0].Value = id;
+
         }
 
         public void Incluir(string produto)

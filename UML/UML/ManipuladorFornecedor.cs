@@ -8,7 +8,7 @@ using UML.Entidade;
 
 namespace UML
 {
-    class ManipuladorFornecedor
+    public class ManipuladorFornecedor
     {
         private EntidadesContext contexto;
 
@@ -19,7 +19,7 @@ namespace UML
 
         public void Salvar(Fornecedor fornecedor)
         {
-            contexto.Fornecedores.Add(fornecedor);
+            contexto.Fornecedore.Add(fornecedor);
             contexto.SaveChanges();
 
             MessageBox.Show("Fornecedor cadastrado com sucesso!");

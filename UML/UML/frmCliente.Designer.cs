@@ -64,7 +64,6 @@
             this.lblCadastroClienteCpf = new System.Windows.Forms.Label();
             this.mtbCadastroClienteCpf = new System.Windows.Forms.MaskedTextBox();
             this.lblCadastroClienteRg = new System.Windows.Forms.Label();
-            this.txtCadastroClienteRg = new System.Windows.Forms.TextBox();
             this.dgvCadastroCliente = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,6 +86,7 @@
             this.lblClienteCidade = new System.Windows.Forms.Label();
             this.lblClienteBancoSituacao = new System.Windows.Forms.Label();
             this.lblClienteBanco = new System.Windows.Forms.Label();
+            this.mtbCadastroClienteRg = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudCadastroClienteID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadastroCliente)).BeginInit();
             this.SuspendLayout();
@@ -395,13 +395,6 @@
             this.lblCadastroClienteRg.TabIndex = 67;
             this.lblCadastroClienteRg.Text = "RG:";
             // 
-            // txtCadastroClienteRg
-            // 
-            this.txtCadastroClienteRg.Location = new System.Drawing.Point(468, 82);
-            this.txtCadastroClienteRg.Name = "txtCadastroClienteRg";
-            this.txtCadastroClienteRg.Size = new System.Drawing.Size(100, 20);
-            this.txtCadastroClienteRg.TabIndex = 1;
-            // 
             // dgvCadastroCliente
             // 
             this.dgvCadastroCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
@@ -567,17 +560,25 @@
             this.lblClienteBanco.TabIndex = 110;
             this.lblClienteBanco.Text = "BANCO:";
             // 
+            // mtbCadastroClienteRg
+            // 
+            this.mtbCadastroClienteRg.Location = new System.Drawing.Point(468, 82);
+            this.mtbCadastroClienteRg.Mask = "000.000-000";
+            this.mtbCadastroClienteRg.Name = "mtbCadastroClienteRg";
+            this.mtbCadastroClienteRg.Size = new System.Drawing.Size(71, 20);
+            this.mtbCadastroClienteRg.TabIndex = 112;
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 482);
+            this.Controls.Add(this.mtbCadastroClienteRg);
             this.Controls.Add(this.lblClienteBancoSituacao);
             this.Controls.Add(this.lblClienteBanco);
             this.Controls.Add(this.txtClienteCidade);
             this.Controls.Add(this.lblClienteCidade);
             this.Controls.Add(this.dgvCadastroCliente);
-            this.Controls.Add(this.txtCadastroClienteRg);
             this.Controls.Add(this.lblCadastroClienteRg);
             this.Controls.Add(this.mtbCadastroClienteCpf);
             this.Controls.Add(this.lblCadastroClienteCpf);
@@ -682,9 +683,9 @@
         public System.Windows.Forms.TextBox txtCadastroClienteNome;
         public System.Windows.Forms.ComboBox cboCadastroClienteEstado;
         public System.Windows.Forms.MaskedTextBox mtbCadastroClienteCpf;
-        public System.Windows.Forms.TextBox txtCadastroClienteRg;
         public System.Windows.Forms.TextBox txtClienteCidade;
         public System.Windows.Forms.Label lblClienteBancoSituacao;
         public System.Windows.Forms.NumericUpDown nudCadastroClienteID;
+        public System.Windows.Forms.MaskedTextBox mtbCadastroClienteRg;
     }
 }
