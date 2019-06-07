@@ -12,11 +12,13 @@ namespace UML.Entidade
         public int Id { get; set; }
         public DateTime DataElaboracao { get; set; }
         public double Quantidade { get; set; }
+        public double Valor_Total { get; set; }
+        public string Status_Pedido { get; set; }
         public virtual Cliente cliente { get; set; }
-        public int ClienteId { get; set; }
+        public virtual int ClienteId { get; set; }
         public virtual Produto Produto { get; set; }
-        public int ProdutoId { get; set; }
-        //public IList<Produto> Produtos { get; set; }
+        public virtual int ProdutoId { get; set; }
+        //public virtual IList<Produto> Produtos { get; set; }
 
         public void Criar(int id, double quantidade)
         {

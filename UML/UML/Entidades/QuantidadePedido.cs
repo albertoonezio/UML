@@ -9,11 +9,11 @@ namespace UML.Entidade
 {
     public class QuantidadePedido
     {
-        public int Id { get; set; }
-        public int Quantidade { get; set; }
-        public string Nome { get; set; }
+        public int ID { get; set; }
+        public DateTime Data_Pedido { get; set; }
+        public string Status_Quantidade { get; set; }
         public virtual Pedido Pedido { get; set; }
-        public int PedidoId { get; set; }
+        public virtual int PedidoId { get; set; }
 
         public void VerificarEstoque()
         {

@@ -27,6 +27,5 @@ namespace UML
             optionsBuilder.UseSqlServer(stringConexao);
             base.OnConfiguring(optionsBuilder);
         }
-
     }
 }

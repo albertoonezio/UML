@@ -59,7 +59,7 @@
             this.txtFornecedorNome = new System.Windows.Forms.TextBox();
             this.cboFornecedorStatus = new System.Windows.Forms.ComboBox();
             this.lblFornecedorStatus = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvFornecedor = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,7 +79,7 @@
             this.lblFornecedorBancoSituacao = new System.Windows.Forms.Label();
             this.lblFornecedorBanco = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudFornecedorID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).BeginInit();
             this.SuspendLayout();
             // 
             // btnFornecedorCriar
@@ -343,10 +343,10 @@
             this.lblFornecedorStatus.TabIndex = 103;
             this.lblFornecedorStatus.Text = "STATUS:";
             // 
-            // dataGridView1
+            // dgvFornecedor
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvFornecedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFornecedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.NOME,
             this.CNPJ,
@@ -361,10 +361,10 @@
             this.TELEFONE,
             this.CELULAR,
             this.STATUS});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 267);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(780, 178);
-            this.dataGridView1.TabIndex = 105;
+            this.dgvFornecedor.Location = new System.Drawing.Point(12, 267);
+            this.dgvFornecedor.Name = "dgvFornecedor";
+            this.dgvFornecedor.Size = new System.Drawing.Size(780, 178);
+            this.dgvFornecedor.TabIndex = 105;
             // 
             // ID
             // 
@@ -481,7 +481,7 @@
             this.Controls.Add(this.lblFornecedorBanco);
             this.Controls.Add(this.txtFornecedorCidade);
             this.Controls.Add(this.lblFornecedorCidade);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvFornecedor);
             this.Controls.Add(this.cboFornecedorStatus);
             this.Controls.Add(this.lblFornecedorStatus);
             this.Controls.Add(this.mtbFornecedorCnpj);
@@ -519,7 +519,7 @@
             this.Text = "Cadastro de Fornecedor";
             this.Load += new System.EventHandler(this.frmFornecedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudFornecedorID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -532,32 +532,18 @@
         private System.Windows.Forms.Button btnFornecedorEditar;
         private System.Windows.Forms.Button btnFornecedorSalvar;
         private System.Windows.Forms.Label lblFornecedorID;
-        private System.Windows.Forms.NumericUpDown nudFornecedorID;
         private System.Windows.Forms.Label lblCadastroFornecedor;
-        private System.Windows.Forms.MaskedTextBox mtbFornecedorCnpj;
         private System.Windows.Forms.Label lblFornecedorCnpj;
-        private System.Windows.Forms.ComboBox cboFornecedorEstado;
-        private System.Windows.Forms.MaskedTextBox mtbFornecedorCelular;
         private System.Windows.Forms.Label lblFornecedorCelular;
-        private System.Windows.Forms.TextBox txtFornecedorBairro;
         private System.Windows.Forms.Label lblFornecedorCep;
         private System.Windows.Forms.Label lblFornecedorEstado;
-        private System.Windows.Forms.MaskedTextBox mtbFornecedorCep;
-        private System.Windows.Forms.TextBox txtFornecedorComplemento;
-        private System.Windows.Forms.TextBox txtFornecedorNumero;
         private System.Windows.Forms.Label lblFornecedorBairro;
         private System.Windows.Forms.Label lblFornecedorComplemento;
         private System.Windows.Forms.Label lblFornecedorNumero;
-        private System.Windows.Forms.ComboBox cboFornecedorLogadouro;
-        private System.Windows.Forms.MaskedTextBox mtbFornecedorTelefone;
         private System.Windows.Forms.Label lblFornecedorTelefone;
         private System.Windows.Forms.Label lblFornecedorEndereco;
-        private System.Windows.Forms.TextBox txtFornecedorEndereco;
         private System.Windows.Forms.Label lblFornecedorNome;
-        private System.Windows.Forms.TextBox txtFornecedorNome;
-        private System.Windows.Forms.ComboBox cboFornecedorStatus;
         private System.Windows.Forms.Label lblFornecedorStatus;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOME;
         private System.Windows.Forms.DataGridViewTextBoxColumn CNPJ;
@@ -572,9 +558,23 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TELEFONE;
         private System.Windows.Forms.DataGridViewTextBoxColumn CELULAR;
         private System.Windows.Forms.DataGridViewTextBoxColumn STATUS;
-        private System.Windows.Forms.TextBox txtFornecedorCidade;
         private System.Windows.Forms.Label lblFornecedorCidade;
-        private System.Windows.Forms.Label lblFornecedorBancoSituacao;
         private System.Windows.Forms.Label lblFornecedorBanco;
+        public System.Windows.Forms.NumericUpDown nudFornecedorID;
+        public System.Windows.Forms.MaskedTextBox mtbFornecedorCnpj;
+        public System.Windows.Forms.ComboBox cboFornecedorEstado;
+        public System.Windows.Forms.MaskedTextBox mtbFornecedorCelular;
+        public System.Windows.Forms.TextBox txtFornecedorBairro;
+        public System.Windows.Forms.MaskedTextBox mtbFornecedorCep;
+        public System.Windows.Forms.TextBox txtFornecedorComplemento;
+        public System.Windows.Forms.TextBox txtFornecedorNumero;
+        public System.Windows.Forms.ComboBox cboFornecedorLogadouro;
+        public System.Windows.Forms.MaskedTextBox mtbFornecedorTelefone;
+        public System.Windows.Forms.TextBox txtFornecedorEndereco;
+        public System.Windows.Forms.TextBox txtFornecedorNome;
+        public System.Windows.Forms.ComboBox cboFornecedorStatus;
+        public System.Windows.Forms.DataGridView dgvFornecedor;
+        public System.Windows.Forms.TextBox txtFornecedorCidade;
+        public System.Windows.Forms.Label lblFornecedorBancoSituacao;
     }
 }

@@ -108,7 +108,26 @@ namespace UML
 
         private void btnCadastroClienteEditar_Click(object sender, EventArgs e)
         {
+            ManipuladorCliente manipular = new ManipuladorCliente();
+            Cliente cliente = manipular.BuscaPorID(1);
 
+            //nudCadastroClienteID.Value = 1;
+            txtCadastroClienteNome.Text = cliente.Nome;
+            cboCadastroClienteLogadouro.Text = cliente.Lougradouro;
+            txtCadastroClienteEndereco.Text = cliente.Endereco;
+            txtCadastroClienteNumero.Text = cliente.Numero;
+            txtCadastroClienteComplemento.Text = cliente.Complemento;
+            txtCadastroClienteBairro.Text = cliente.Bairro;
+            mtbCadastroClienteCep.Text = cliente.Cep;
+            cboCadastroClienteEstado.Text = cliente.Estado;
+            mtbCadastroClienteTelefone.Text = cliente.Telefone;
+            mtbCadastroClienteCelular.Text = cliente.Celular;
+            txtCadastroClienteFiliacao.Text = cliente.Filiacao;
+            cboCadastroClienteStatus.Text = cliente.Status_Cliente;
+            txtCadastroClienteLimiteCredito.Text = Convert.ToString(cliente.Limite_De_Credito);
+            mtbCadastroClienteCpf.Text = cliente.Cpf;
+            mtbCadastroClienteRg.Text = cliente.Rg;
+            txtClienteCidade.Text = cliente.Cidade;
         }
 
         private void btnCadastroClienteDeletar_Click(object sender, EventArgs e)

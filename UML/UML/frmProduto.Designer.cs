@@ -38,18 +38,17 @@
             this.lblProdutoNome = new System.Windows.Forms.Label();
             this.txtProdutoNome = new System.Windows.Forms.TextBox();
             this.lblCadastroProduto = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtPedidoValorUnidade = new System.Windows.Forms.TextBox();
-            this.lblPedidoValorUnidade = new System.Windows.Forms.Label();
-            this.txtPedidoStatusPedido = new System.Windows.Forms.TextBox();
-            this.lblPedidoStatusPedido = new System.Windows.Forms.Label();
-            this.lblPedidoDataElaboracao = new System.Windows.Forms.Label();
-            this.nudPedidoQuantidade = new System.Windows.Forms.NumericUpDown();
-            this.lblPedidoQuantidade = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.lblProdutoFornecedor = new System.Windows.Forms.Label();
+            this.txtProdutoFornecedor = new System.Windows.Forms.TextBox();
+            this.txtProdutoValorUnidade = new System.Windows.Forms.TextBox();
+            this.lblProdutoValorUnidade = new System.Windows.Forms.Label();
+            this.lblProdutoStatusPedido = new System.Windows.Forms.Label();
+            this.lblProdutoDataFabricacao = new System.Windows.Forms.Label();
+            this.nudProdutoQuantidade = new System.Windows.Forms.NumericUpDown();
+            this.lblProdutoQuantidade = new System.Windows.Forms.Label();
+            this.mtbProdutoDataFabricacao = new System.Windows.Forms.MaskedTextBox();
             this.lblProdutoBanco = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FORNECEDOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,9 +57,16 @@
             this.DATA_ADICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STATUS_ESTOQUE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblProdutoBancoSituacao = new System.Windows.Forms.Label();
+            this.lblProdutoDataVencimento = new System.Windows.Forms.Label();
+            this.mtbProdutoDataVencimento = new System.Windows.Forms.MaskedTextBox();
+            this.lblProdutoDataAdicao = new System.Windows.Forms.Label();
+            this.mtbProdutoDataAdicao = new System.Windows.Forms.MaskedTextBox();
+            this.cboProdutoStatus = new System.Windows.Forms.ComboBox();
+            this.lblProdutoCategoria = new System.Windows.Forms.Label();
+            this.cboProdutoCategoria = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudProdutoID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPedidoQuantidade)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudProdutoQuantidade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnProdutoCriar
@@ -71,6 +77,7 @@
             this.btnProdutoCriar.TabIndex = 81;
             this.btnProdutoCriar.Text = "CRIAR";
             this.btnProdutoCriar.UseVisualStyleBackColor = true;
+            this.btnProdutoCriar.Click += new System.EventHandler(this.btnProdutoCriar_Click);
             // 
             // btnProdutoDeletar
             // 
@@ -98,6 +105,7 @@
             this.btnProdutoSalvar.TabIndex = 78;
             this.btnProdutoSalvar.Text = "SALVAR";
             this.btnProdutoSalvar.UseVisualStyleBackColor = true;
+            this.btnProdutoSalvar.Click += new System.EventHandler(this.btnProdutoSalvar_Click);
             // 
             // lblProdutoID
             // 
@@ -143,90 +151,81 @@
             this.lblCadastroProduto.Text = "Cadastro Produto";
             this.lblCadastroProduto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lblProdutoFornecedor
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 159);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
-            this.label1.TabIndex = 83;
-            this.label1.Text = "FORNECEDOR:";
+            this.lblProdutoFornecedor.AutoSize = true;
+            this.lblProdutoFornecedor.Location = new System.Drawing.Point(45, 159);
+            this.lblProdutoFornecedor.Name = "lblProdutoFornecedor";
+            this.lblProdutoFornecedor.Size = new System.Drawing.Size(85, 13);
+            this.lblProdutoFornecedor.TabIndex = 83;
+            this.lblProdutoFornecedor.Text = "FORNECEDOR:";
             // 
-            // textBox1
+            // txtProdutoFornecedor
             // 
-            this.textBox1.Location = new System.Drawing.Point(134, 152);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(460, 20);
-            this.textBox1.TabIndex = 82;
+            this.txtProdutoFornecedor.Location = new System.Drawing.Point(134, 152);
+            this.txtProdutoFornecedor.Name = "txtProdutoFornecedor";
+            this.txtProdutoFornecedor.Size = new System.Drawing.Size(460, 20);
+            this.txtProdutoFornecedor.TabIndex = 82;
             // 
-            // txtPedidoValorUnidade
+            // txtProdutoValorUnidade
             // 
-            this.txtPedidoValorUnidade.Location = new System.Drawing.Point(686, 218);
-            this.txtPedidoValorUnidade.Name = "txtPedidoValorUnidade";
-            this.txtPedidoValorUnidade.Size = new System.Drawing.Size(107, 20);
-            this.txtPedidoValorUnidade.TabIndex = 97;
-            this.txtPedidoValorUnidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtProdutoValorUnidade.Location = new System.Drawing.Point(686, 218);
+            this.txtProdutoValorUnidade.Name = "txtProdutoValorUnidade";
+            this.txtProdutoValorUnidade.Size = new System.Drawing.Size(107, 20);
+            this.txtProdutoValorUnidade.TabIndex = 97;
+            this.txtProdutoValorUnidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lblPedidoValorUnidade
+            // lblProdutoValorUnidade
             // 
-            this.lblPedidoValorUnidade.AutoSize = true;
-            this.lblPedidoValorUnidade.Location = new System.Drawing.Point(561, 225);
-            this.lblPedidoValorUnidade.Name = "lblPedidoValorUnidade";
-            this.lblPedidoValorUnidade.Size = new System.Drawing.Size(124, 13);
-            this.lblPedidoValorUnidade.TabIndex = 96;
-            this.lblPedidoValorUnidade.Text = "VALOR POR UNIDADE:";
+            this.lblProdutoValorUnidade.AutoSize = true;
+            this.lblProdutoValorUnidade.Location = new System.Drawing.Point(561, 225);
+            this.lblProdutoValorUnidade.Name = "lblProdutoValorUnidade";
+            this.lblProdutoValorUnidade.Size = new System.Drawing.Size(124, 13);
+            this.lblProdutoValorUnidade.TabIndex = 96;
+            this.lblProdutoValorUnidade.Text = "VALOR POR UNIDADE:";
             // 
-            // txtPedidoStatusPedido
+            // lblProdutoStatusPedido
             // 
-            this.txtPedidoStatusPedido.Location = new System.Drawing.Point(300, 454);
-            this.txtPedidoStatusPedido.Name = "txtPedidoStatusPedido";
-            this.txtPedidoStatusPedido.ReadOnly = true;
-            this.txtPedidoStatusPedido.Size = new System.Drawing.Size(140, 20);
-            this.txtPedidoStatusPedido.TabIndex = 95;
-            this.txtPedidoStatusPedido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblProdutoStatusPedido.AutoSize = true;
+            this.lblProdutoStatusPedido.Location = new System.Drawing.Point(191, 461);
+            this.lblProdutoStatusPedido.Name = "lblProdutoStatusPedido";
+            this.lblProdutoStatusPedido.Size = new System.Drawing.Size(108, 13);
+            this.lblProdutoStatusPedido.TabIndex = 94;
+            this.lblProdutoStatusPedido.Text = "STATUS ESTOQUE:";
             // 
-            // lblPedidoStatusPedido
+            // lblProdutoDataFabricacao
             // 
-            this.lblPedidoStatusPedido.AutoSize = true;
-            this.lblPedidoStatusPedido.Location = new System.Drawing.Point(191, 461);
-            this.lblPedidoStatusPedido.Name = "lblPedidoStatusPedido";
-            this.lblPedidoStatusPedido.Size = new System.Drawing.Size(108, 13);
-            this.lblPedidoStatusPedido.TabIndex = 94;
-            this.lblPedidoStatusPedido.Text = "STATUS ESTOQUE:";
+            this.lblProdutoDataFabricacao.AutoSize = true;
+            this.lblProdutoDataFabricacao.Location = new System.Drawing.Point(576, 94);
+            this.lblProdutoDataFabricacao.Name = "lblProdutoDataFabricacao";
+            this.lblProdutoDataFabricacao.Size = new System.Drawing.Size(109, 13);
+            this.lblProdutoDataFabricacao.TabIndex = 93;
+            this.lblProdutoDataFabricacao.Text = "DATA FABRICAÇÃO:";
             // 
-            // lblPedidoDataElaboracao
+            // nudProdutoQuantidade
             // 
-            this.lblPedidoDataElaboracao.AutoSize = true;
-            this.lblPedidoDataElaboracao.Location = new System.Drawing.Point(603, 94);
-            this.lblPedidoDataElaboracao.Name = "lblPedidoDataElaboracao";
-            this.lblPedidoDataElaboracao.Size = new System.Drawing.Size(82, 13);
-            this.lblPedidoDataElaboracao.TabIndex = 93;
-            this.lblPedidoDataElaboracao.Text = "DATA ADIÇÃO:";
+            this.nudProdutoQuantidade.Location = new System.Drawing.Point(97, 454);
+            this.nudProdutoQuantidade.Name = "nudProdutoQuantidade";
+            this.nudProdutoQuantidade.Size = new System.Drawing.Size(84, 20);
+            this.nudProdutoQuantidade.TabIndex = 92;
             // 
-            // nudPedidoQuantidade
+            // lblProdutoQuantidade
             // 
-            this.nudPedidoQuantidade.Location = new System.Drawing.Point(97, 454);
-            this.nudPedidoQuantidade.Name = "nudPedidoQuantidade";
-            this.nudPedidoQuantidade.Size = new System.Drawing.Size(84, 20);
-            this.nudPedidoQuantidade.TabIndex = 92;
+            this.lblProdutoQuantidade.AutoSize = true;
+            this.lblProdutoQuantidade.Location = new System.Drawing.Point(14, 461);
+            this.lblProdutoQuantidade.Name = "lblProdutoQuantidade";
+            this.lblProdutoQuantidade.Size = new System.Drawing.Size(81, 13);
+            this.lblProdutoQuantidade.TabIndex = 91;
+            this.lblProdutoQuantidade.Text = "QUANTIDADE:";
             // 
-            // lblPedidoQuantidade
+            // mtbProdutoDataFabricacao
             // 
-            this.lblPedidoQuantidade.AutoSize = true;
-            this.lblPedidoQuantidade.Location = new System.Drawing.Point(14, 461);
-            this.lblPedidoQuantidade.Name = "lblPedidoQuantidade";
-            this.lblPedidoQuantidade.Size = new System.Drawing.Size(81, 13);
-            this.lblPedidoQuantidade.TabIndex = 91;
-            this.lblPedidoQuantidade.Text = "QUANTIDADE:";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(688, 87);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(72, 20);
-            this.maskedTextBox1.TabIndex = 90;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.mtbProdutoDataFabricacao.Location = new System.Drawing.Point(688, 87);
+            this.mtbProdutoDataFabricacao.Mask = "00/00/0000";
+            this.mtbProdutoDataFabricacao.Name = "mtbProdutoDataFabricacao";
+            this.mtbProdutoDataFabricacao.Size = new System.Drawing.Size(72, 20);
+            this.mtbProdutoDataFabricacao.TabIndex = 90;
+            this.mtbProdutoDataFabricacao.ValidatingType = typeof(System.DateTime);
             // 
             // lblProdutoBanco
             // 
@@ -237,10 +236,10 @@
             this.lblProdutoBanco.TabIndex = 98;
             this.lblProdutoBanco.Text = "BANCO:";
             // 
-            // dataGridView1
+            // dgvProdutos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.NOME,
             this.FORNECEDOR,
@@ -248,10 +247,10 @@
             this.VALOR_UNIDADE,
             this.DATA_ADICAO,
             this.STATUS_ESTOQUE});
-            this.dataGridView1.Location = new System.Drawing.Point(17, 247);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(778, 201);
-            this.dataGridView1.TabIndex = 99;
+            this.dgvProdutos.Location = new System.Drawing.Point(17, 247);
+            this.dgvProdutos.Name = "dgvProdutos";
+            this.dgvProdutos.Size = new System.Drawing.Size(778, 201);
+            this.dgvProdutos.TabIndex = 99;
             // 
             // ID
             // 
@@ -306,24 +305,91 @@
             this.lblProdutoBancoSituacao.TabIndex = 100;
             this.lblProdutoBancoSituacao.Text = "OFFLINE";
             // 
+            // lblProdutoDataVencimento
+            // 
+            this.lblProdutoDataVencimento.AutoSize = true;
+            this.lblProdutoDataVencimento.Location = new System.Drawing.Point(572, 126);
+            this.lblProdutoDataVencimento.Name = "lblProdutoDataVencimento";
+            this.lblProdutoDataVencimento.Size = new System.Drawing.Size(113, 13);
+            this.lblProdutoDataVencimento.TabIndex = 102;
+            this.lblProdutoDataVencimento.Text = "DATA VENCIMENTO:";
+            // 
+            // mtbProdutoDataVencimento
+            // 
+            this.mtbProdutoDataVencimento.Location = new System.Drawing.Point(688, 119);
+            this.mtbProdutoDataVencimento.Mask = "00/00/0000";
+            this.mtbProdutoDataVencimento.Name = "mtbProdutoDataVencimento";
+            this.mtbProdutoDataVencimento.Size = new System.Drawing.Size(72, 20);
+            this.mtbProdutoDataVencimento.TabIndex = 101;
+            this.mtbProdutoDataVencimento.ValidatingType = typeof(System.DateTime);
+            // 
+            // lblProdutoDataAdicao
+            // 
+            this.lblProdutoDataAdicao.AutoSize = true;
+            this.lblProdutoDataAdicao.Location = new System.Drawing.Point(603, 157);
+            this.lblProdutoDataAdicao.Name = "lblProdutoDataAdicao";
+            this.lblProdutoDataAdicao.Size = new System.Drawing.Size(82, 13);
+            this.lblProdutoDataAdicao.TabIndex = 104;
+            this.lblProdutoDataAdicao.Text = "DATA ADIÇÃO:";
+            // 
+            // mtbProdutoDataAdicao
+            // 
+            this.mtbProdutoDataAdicao.Location = new System.Drawing.Point(688, 150);
+            this.mtbProdutoDataAdicao.Mask = "00/00/0000";
+            this.mtbProdutoDataAdicao.Name = "mtbProdutoDataAdicao";
+            this.mtbProdutoDataAdicao.Size = new System.Drawing.Size(72, 20);
+            this.mtbProdutoDataAdicao.TabIndex = 103;
+            this.mtbProdutoDataAdicao.ValidatingType = typeof(System.DateTime);
+            // 
+            // cboProdutoStatus
+            // 
+            this.cboProdutoStatus.FormattingEnabled = true;
+            this.cboProdutoStatus.Location = new System.Drawing.Point(300, 454);
+            this.cboProdutoStatus.Name = "cboProdutoStatus";
+            this.cboProdutoStatus.Size = new System.Drawing.Size(151, 21);
+            this.cboProdutoStatus.TabIndex = 105;
+            // 
+            // lblProdutoCategoria
+            // 
+            this.lblProdutoCategoria.AutoSize = true;
+            this.lblProdutoCategoria.Location = new System.Drawing.Point(22, 227);
+            this.lblProdutoCategoria.Name = "lblProdutoCategoria";
+            this.lblProdutoCategoria.Size = new System.Drawing.Size(72, 13);
+            this.lblProdutoCategoria.TabIndex = 106;
+            this.lblProdutoCategoria.Text = "CATEGORIA:";
+            // 
+            // cboProdutoCategoria
+            // 
+            this.cboProdutoCategoria.FormattingEnabled = true;
+            this.cboProdutoCategoria.Location = new System.Drawing.Point(95, 222);
+            this.cboProdutoCategoria.Name = "cboProdutoCategoria";
+            this.cboProdutoCategoria.Size = new System.Drawing.Size(238, 21);
+            this.cboProdutoCategoria.TabIndex = 107;
+            // 
             // frmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 482);
+            this.Controls.Add(this.cboProdutoCategoria);
+            this.Controls.Add(this.lblProdutoCategoria);
+            this.Controls.Add(this.cboProdutoStatus);
+            this.Controls.Add(this.lblProdutoDataAdicao);
+            this.Controls.Add(this.mtbProdutoDataAdicao);
+            this.Controls.Add(this.lblProdutoDataVencimento);
+            this.Controls.Add(this.mtbProdutoDataVencimento);
             this.Controls.Add(this.lblProdutoBancoSituacao);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvProdutos);
             this.Controls.Add(this.lblProdutoBanco);
-            this.Controls.Add(this.txtPedidoValorUnidade);
-            this.Controls.Add(this.lblPedidoValorUnidade);
-            this.Controls.Add(this.txtPedidoStatusPedido);
-            this.Controls.Add(this.lblPedidoStatusPedido);
-            this.Controls.Add(this.lblPedidoDataElaboracao);
-            this.Controls.Add(this.nudPedidoQuantidade);
-            this.Controls.Add(this.lblPedidoQuantidade);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtProdutoValorUnidade);
+            this.Controls.Add(this.lblProdutoValorUnidade);
+            this.Controls.Add(this.lblProdutoStatusPedido);
+            this.Controls.Add(this.lblProdutoDataFabricacao);
+            this.Controls.Add(this.nudProdutoQuantidade);
+            this.Controls.Add(this.lblProdutoQuantidade);
+            this.Controls.Add(this.mtbProdutoDataFabricacao);
+            this.Controls.Add(this.lblProdutoFornecedor);
+            this.Controls.Add(this.txtProdutoFornecedor);
             this.Controls.Add(this.btnProdutoCriar);
             this.Controls.Add(this.btnProdutoDeletar);
             this.Controls.Add(this.btnProdutoEditar);
@@ -338,9 +404,10 @@
             this.Name = "frmProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmProduto";
+            this.Load += new System.EventHandler(this.frmProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudProdutoID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPedidoQuantidade)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudProdutoQuantidade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,22 +420,14 @@
         private System.Windows.Forms.Button btnProdutoEditar;
         private System.Windows.Forms.Button btnProdutoSalvar;
         private System.Windows.Forms.Label lblProdutoID;
-        private System.Windows.Forms.NumericUpDown nudProdutoID;
         private System.Windows.Forms.Label lblProdutoNome;
-        private System.Windows.Forms.TextBox txtProdutoNome;
         private System.Windows.Forms.Label lblCadastroProduto;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtPedidoValorUnidade;
-        private System.Windows.Forms.Label lblPedidoValorUnidade;
-        private System.Windows.Forms.TextBox txtPedidoStatusPedido;
-        private System.Windows.Forms.Label lblPedidoStatusPedido;
-        private System.Windows.Forms.Label lblPedidoDataElaboracao;
-        private System.Windows.Forms.NumericUpDown nudPedidoQuantidade;
-        private System.Windows.Forms.Label lblPedidoQuantidade;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label lblProdutoFornecedor;
+        private System.Windows.Forms.Label lblProdutoValorUnidade;
+        private System.Windows.Forms.Label lblProdutoStatusPedido;
+        private System.Windows.Forms.Label lblProdutoDataFabricacao;
+        private System.Windows.Forms.Label lblProdutoQuantidade;
         private System.Windows.Forms.Label lblProdutoBanco;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOME;
         private System.Windows.Forms.DataGridViewTextBoxColumn FORNECEDOR;
@@ -376,6 +435,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn VALOR_UNIDADE;
         private System.Windows.Forms.DataGridViewTextBoxColumn DATA_ADICAO;
         private System.Windows.Forms.DataGridViewTextBoxColumn STATUS_ESTOQUE;
-        private System.Windows.Forms.Label lblProdutoBancoSituacao;
+        public System.Windows.Forms.NumericUpDown nudProdutoID;
+        public System.Windows.Forms.TextBox txtProdutoNome;
+        public System.Windows.Forms.TextBox txtProdutoFornecedor;
+        public System.Windows.Forms.TextBox txtProdutoValorUnidade;
+        public System.Windows.Forms.NumericUpDown nudProdutoQuantidade;
+        public System.Windows.Forms.MaskedTextBox mtbProdutoDataFabricacao;
+        public System.Windows.Forms.DataGridView dgvProdutos;
+        public System.Windows.Forms.Label lblProdutoBancoSituacao;
+        private System.Windows.Forms.Label lblProdutoDataVencimento;
+        public System.Windows.Forms.MaskedTextBox mtbProdutoDataVencimento;
+        private System.Windows.Forms.Label lblProdutoDataAdicao;
+        public System.Windows.Forms.MaskedTextBox mtbProdutoDataAdicao;
+        public System.Windows.Forms.ComboBox cboProdutoStatus;
+        private System.Windows.Forms.Label lblProdutoCategoria;
+        private System.Windows.Forms.ComboBox cboProdutoCategoria;
     }
 }

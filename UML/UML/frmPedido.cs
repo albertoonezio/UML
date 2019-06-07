@@ -25,5 +25,10 @@ namespace UML
             Pedido pedido = new Pedido();
             pedido.Criar(id, quantidade);
         }
+
+        private void frmPedido_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -194,6 +194,9 @@
     <Compile Include="Entidades\Produto.cs" />
     <Compile Include="ManipuladorCliente.cs" />
     <Compile Include="ManipuladorFornecedor.cs" />
+    <Compile Include="ManipuladorPedido.cs" />
+    <Compile Include="ManipuladorProduto.cs" />
+    <Compile Include="ManipularQuantidadePedido.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entidades\QuantidadePedido.cs" />

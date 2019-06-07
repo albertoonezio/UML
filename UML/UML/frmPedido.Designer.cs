@@ -38,7 +38,7 @@
             this.txtPedidoNomeCliente = new System.Windows.Forms.TextBox();
             this.lblPedido = new System.Windows.Forms.Label();
             this.lblPedidoNomeProduto = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mtbPedidoDataElaboracao = new System.Windows.Forms.MaskedTextBox();
             this.lblPedidoQuantidade = new System.Windows.Forms.Label();
             this.nudPedidoQuantidade = new System.Windows.Forms.NumericUpDown();
             this.lblPedidoDataElaboracao = new System.Windows.Forms.Label();
@@ -147,14 +147,14 @@
             this.lblPedidoNomeProduto.TabIndex = 73;
             this.lblPedidoNomeProduto.Text = "NOME PRODUTO:";
             // 
-            // maskedTextBox1
+            // mtbPedidoDataElaboracao
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(687, 83);
-            this.maskedTextBox1.Mask = "00/00/0000 90:00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 74;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.mtbPedidoDataElaboracao.Location = new System.Drawing.Point(687, 83);
+            this.mtbPedidoDataElaboracao.Mask = "00/00/0000";
+            this.mtbPedidoDataElaboracao.Name = "mtbPedidoDataElaboracao";
+            this.mtbPedidoDataElaboracao.Size = new System.Drawing.Size(68, 20);
+            this.mtbPedidoDataElaboracao.TabIndex = 74;
+            this.mtbPedidoDataElaboracao.ValidatingType = typeof(System.DateTime);
             // 
             // lblPedidoQuantidade
             // 
@@ -389,7 +389,7 @@
             this.Controls.Add(this.lblPedidoDataElaboracao);
             this.Controls.Add(this.nudPedidoQuantidade);
             this.Controls.Add(this.lblPedidoQuantidade);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.mtbPedidoDataElaboracao);
             this.Controls.Add(this.lblPedidoNomeProduto);
             this.Controls.Add(this.btnCadastroPedidoDeletar);
             this.Controls.Add(this.btnCadastroPedidoEditar);
@@ -404,6 +404,7 @@
             this.Name = "frmPedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Pedidos";
+            this.Load += new System.EventHandler(this.frmPedido_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudPedidoID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPedidoQuantidade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadastroPedido)).EndInit();
@@ -430,13 +431,12 @@
         private System.Windows.Forms.Button btnPedidoValidarCliente;
         private System.Windows.Forms.Button btnPedidoValidarProduto;
         private System.Windows.Forms.Button btnCadastroPedidoCriar;
-        private System.Windows.Forms.Label lblPedidoBancoSituacao;
         private System.Windows.Forms.Label lblPedidoBanco;
         private System.Windows.Forms.Button btnCadastroPedidoIncluir;
         private System.Windows.Forms.Button btnCadastroPedidoRemover;
         public System.Windows.Forms.NumericUpDown nudPedidoID;
         public System.Windows.Forms.TextBox txtPedidoNomeCliente;
-        public System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        public System.Windows.Forms.MaskedTextBox mtbPedidoDataElaboracao;
         public System.Windows.Forms.NumericUpDown nudPedidoQuantidade;
         public System.Windows.Forms.TextBox txtPedidoStatusCliente;
         public System.Windows.Forms.TextBox txtPedidoStatusProduto;
@@ -446,5 +446,6 @@
         public System.Windows.Forms.DataGridView dgvCadastroPedido;
         public System.Windows.Forms.ListBox lbPedidoListaProdutos;
         public System.Windows.Forms.ComboBox cboPedidoNomeProduto;
+        public System.Windows.Forms.Label lblPedidoBancoSituacao;
     }
 }
