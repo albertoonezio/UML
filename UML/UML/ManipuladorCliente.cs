@@ -25,9 +25,15 @@ namespace UML
             MessageBox.Show("Cliente cadastrado com sucesso!");
         }
 
-        public Cliente BuscaPorID(int id)
+        public Cliente BuscaPorId(int id)
         {
-            return contexto.Cliente.FirstOrDefault(u => u.ID == id);
+            return contexto.Cliente.FirstOrDefault(cliente => cliente.ID == id);
+        }
+
+        public void Remover(Cliente cliente)
+        {
+            contexto.Cliente.Remove(cliente);
+            contexto.SaveChanges();
         }
     }
 }

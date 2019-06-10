@@ -108,31 +108,41 @@ namespace UML
 
         private void btnCadastroClienteEditar_Click(object sender, EventArgs e)
         {
-            ManipuladorCliente manipular = new ManipuladorCliente();
-            Cliente cliente = manipular.BuscaPorID(1);
+            EntidadesContext contexto = new EntidadesContext();
 
-            //nudCadastroClienteID.Value = 1;
-            txtCadastroClienteNome.Text = cliente.Nome;
-            cboCadastroClienteLogadouro.Text = cliente.Lougradouro;
-            txtCadastroClienteEndereco.Text = cliente.Endereco;
-            txtCadastroClienteNumero.Text = cliente.Numero;
-            txtCadastroClienteComplemento.Text = cliente.Complemento;
-            txtCadastroClienteBairro.Text = cliente.Bairro;
-            mtbCadastroClienteCep.Text = cliente.Cep;
-            cboCadastroClienteEstado.Text = cliente.Estado;
-            mtbCadastroClienteTelefone.Text = cliente.Telefone;
-            mtbCadastroClienteCelular.Text = cliente.Celular;
-            txtCadastroClienteFiliacao.Text = cliente.Filiacao;
-            cboCadastroClienteStatus.Text = cliente.Status_Cliente;
-            txtCadastroClienteLimiteCredito.Text = Convert.ToString(cliente.Limite_De_Credito);
-            mtbCadastroClienteCpf.Text = cliente.Cpf;
-            mtbCadastroClienteRg.Text = cliente.Rg;
-            txtClienteCidade.Text = cliente.Cidade;
+            var busca = from p in contexto.Cliente
+                        where p.ID == 1
+                        select new { p.ID, p.Nome, p.Lougradouro, p.Endereco, p.Numero, p.Complemento, p.Bairro, p.Cidade, p.Estado, p.Cep, p.Telefone, p.Celular, p.Filiacao, p.Status_Cliente, p.Cpf, p.Rg, p.Limite_De_Credito };
+
+            foreach (var cliente in busca)
+            {
+                nudCadastroClienteID.Value = cliente.ID;
+                txtCadastroClienteNome.Text = cliente.Nome;
+                cboCadastroClienteLogadouro.Text = cliente.Lougradouro;
+                txtCadastroClienteEndereco.Text = cliente.Endereco;
+                txtCadastroClienteNumero.Text = cliente.Numero;
+                txtCadastroClienteComplemento.Text = cliente.Complemento;
+                txtCadastroClienteBairro.Text = cliente.Bairro;
+                txtClienteCidade.Text = cliente.Cidade;
+                cboCadastroClienteEstado.Text = cliente.Estado;
+                mtbCadastroClienteCep.Text = cliente.Cep;
+                mtbCadastroClienteTelefone.Text = cliente.Telefone;
+                mtbCadastroClienteCelular.Text = cliente.Celular;
+                txtCadastroClienteFiliacao.Text = cliente.Filiacao;
+                cboCadastroClienteStatus.Text = cliente.Status_Cliente;
+                txtCadastroClienteLimiteCredito.Text = cliente.Limite_De_Credito.ToString("s");
+                mtbCadastroClienteCpf.Text = cliente.Cpf;
+                mtbCadastroClienteRg.Text = cliente.Rg;
+            }
+
+            
         }
 
         private void btnCadastroClienteDeletar_Click(object sender, EventArgs e)
         {
-
+            ManipuladorCliente manipular = new ManipuladorCliente();
+            Cliente cliente = manipular.BuscaPorId(2);
+            manipular.Remover(cliente);
         }
     }
 }
