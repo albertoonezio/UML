@@ -23,17 +23,31 @@ namespace UML.Entidade
         public string Celular { get; set; }
         public string Filiacao { get; set; }
         public string Status_Cliente { get; set; }
-        public double Limite_De_Credito { get; set; }
+        public string Limite_De_Credito { get; set; }
         public string Cpf { get; set; }
         public string Rg { get; set; }
         public string Cidade { get; set; }
 
-        public void Cadastrar(int id, string nome, string lougradouro, string endereco, string numero, string complemento, string bairro, string cep, string estado, string telefone, string celular, string filiacao, string status, string limiteDeCredito, string cpf, string rg, string cidade)
+        public void Loader()
         {
+            frmCliente cliente = new frmCliente();
+            
+
+            // cliente.dgvCadastroCliente.DataSource = retornarDados.ToList();
+        }
+
+        public void Cadastrar()
+        {
+            
             
         }
 
         public void Editar(int id)
+        {
+
+        }
+
+        public void SalvarEdicao()
         {
 
         }

@@ -97,7 +97,7 @@ namespace UML
                 Celular = mtbCadastroClienteCelular.Text,
                 Filiacao = txtCadastroClienteFiliacao.Text,
                 Status_Cliente = cboCadastroClienteStatus.Text,
-                Limite_De_Credito = Convert.ToDouble(txtCadastroClienteLimiteCredito.Text),
+                Limite_De_Credito = txtCadastroClienteLimiteCredito.Text,
                 Cpf = mtbCadastroClienteCpf.Text,
                 Rg = mtbCadastroClienteRg.Text,
                 Cidade = txtClienteCidade.Text
@@ -108,11 +108,43 @@ namespace UML
 
         private void btnCadastroClienteEditar_Click(object sender, EventArgs e)
         {
+            nudCadastroClienteID.ReadOnly = false;
+        }
+
+        private void btnCadastroClienteDeletar_Click(object sender, EventArgs e)
+        {
+            ManipuladorCliente manipular = new ManipuladorCliente();
+            Cliente cliente = manipular.BuscaPorId(2);
+            manipular.Remover(cliente);
+        }
+
+        private void nudCadastroClienteID_ValueChanged(object sender, EventArgs e)
+        {
             EntidadesContext contexto = new EntidadesContext();
+            int buscaId = Convert.ToInt32(nudCadastroClienteID.Value);
 
             var busca = from p in contexto.Cliente
-                        where p.ID == 1
-                        select new { p.ID, p.Nome, p.Lougradouro, p.Endereco, p.Numero, p.Complemento, p.Bairro, p.Cidade, p.Estado, p.Cep, p.Telefone, p.Celular, p.Filiacao, p.Status_Cliente, p.Cpf, p.Rg, p.Limite_De_Credito };
+                        where p.ID == buscaId
+                        select new
+                        {
+                            p.ID,
+                            p.Nome,
+                            p.Lougradouro,
+                            p.Endereco,
+                            p.Numero,
+                            p.Complemento,
+                            p.Bairro,
+                            p.Cidade,
+                            p.Estado,
+                            p.Cep,
+                            p.Telefone,
+                            p.Celular,
+                            p.Filiacao,
+                            p.Status_Cliente,
+                            p.Cpf,
+                            p.Rg,
+                            p.Limite_De_Credito
+                        };
 
             foreach (var cliente in busca)
             {
@@ -130,19 +162,47 @@ namespace UML
                 mtbCadastroClienteCelular.Text = cliente.Celular;
                 txtCadastroClienteFiliacao.Text = cliente.Filiacao;
                 cboCadastroClienteStatus.Text = cliente.Status_Cliente;
-                txtCadastroClienteLimiteCredito.Text = cliente.Limite_De_Credito.ToString("s");
+                txtCadastroClienteLimiteCredito.Text = cliente.Limite_De_Credito; 
                 mtbCadastroClienteCpf.Text = cliente.Cpf;
                 mtbCadastroClienteRg.Text = cliente.Rg;
             }
-
-            
         }
 
-        private void btnCadastroClienteDeletar_Click(object sender, EventArgs e)
+        private void frmCliente_Shown(object sender, EventArgs e)
         {
-            ManipuladorCliente manipular = new ManipuladorCliente();
-            Cliente cliente = manipular.BuscaPorId(2);
-            manipular.Remover(cliente);
+            EntidadesContext contexto = new EntidadesContext();
+            int i = 0;
+            var retornarDados = from d in contexto.Cliente
+                                select d;
+
+            int total = retornarDados.Count();
+            //MessageBox.Show(Convert.ToString(total));
+            nudCadastroClienteID.Maximum = total;
+
+            foreach (var item in retornarDados)
+            {
+                dgvCadastroCliente.Rows.Add(new object[] 
+                {
+                    dgvCadastroCliente.Rows[i].Cells["ID"].Value = item.ID,
+                    dgvCadastroCliente.Rows[i].Cells["NOME"].Value = item.Nome,
+                    dgvCadastroCliente.Rows[i].Cells["FILIACAO"].Value = item.Filiacao,
+                    dgvCadastroCliente.Rows[i].Cells["CPF"].Value = item.Cpf,
+                    dgvCadastroCliente.Rows[i].Cells["RG"].Value = item.Rg,
+                    dgvCadastroCliente.Rows[i].Cells["LOUGRADOURO"].Value = item.Lougradouro,
+                    dgvCadastroCliente.Rows[i].Cells["ENDERECO"].Value = item.Endereco,
+                    dgvCadastroCliente.Rows[i].Cells["NUMERO"].Value = item.Numero,
+                    dgvCadastroCliente.Rows[i].Cells["COMPLEMENTO"].Value = item.Complemento,
+                    dgvCadastroCliente.Rows[i].Cells["BAIRRO"].Value = item.Bairro,
+                    dgvCadastroCliente.Rows[i].Cells["CIDADE"].Value = item.Cidade,
+                    dgvCadastroCliente.Rows[i].Cells["ESTADO"].Value = item.Estado,
+                    dgvCadastroCliente.Rows[i].Cells["CEP"].Value = item.Cep,
+                    dgvCadastroCliente.Rows[i].Cells["TELEFONE"].Value = item.Telefone,
+                    dgvCadastroCliente.Rows[i].Cells["CELULAR"].Value = item.Celular,
+                    dgvCadastroCliente.Rows[i].Cells["LIMITE_DE_CREDITO"].Value = item.Limite_De_Credito,
+                    dgvCadastroCliente.Rows[i].Cells["STATUS_CLIENTE"].Value = item.Status_Cliente
+                });
+                i++;
+            }
         }
     }
 }

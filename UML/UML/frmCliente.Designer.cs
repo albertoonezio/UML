@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCliente));
             this.btnCadastroClienteCriar = new System.Windows.Forms.Button();
             this.cboCadastroClienteStatus = new System.Windows.Forms.ComboBox();
@@ -65,30 +66,34 @@
             this.mtbCadastroClienteCpf = new System.Windows.Forms.MaskedTextBox();
             this.lblCadastroClienteRg = new System.Windows.Forms.Label();
             this.dgvCadastroCliente = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FILIACAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOUGRADOURO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ENDERECO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NUMERO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COMPLEMENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BAIRRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CEP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TELEFONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CELULAR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LIMITE_DE_CREDITO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtClienteCidade = new System.Windows.Forms.TextBox();
             this.lblClienteCidade = new System.Windows.Forms.Label();
             this.lblClienteBancoSituacao = new System.Windows.Forms.Label();
             this.lblClienteBanco = new System.Windows.Forms.Label();
             this.mtbCadastroClienteRg = new System.Windows.Forms.MaskedTextBox();
+            this.controle_GeralDataSet = new UML.Controle_GeralDataSet();
+            this.controleGeralDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Filiacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lougradouro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Limite_De_Credito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nudCadastroClienteID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadastroCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.controle_GeralDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.controleGeralDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCadastroClienteCriar
@@ -333,6 +338,7 @@
             this.nudCadastroClienteID.ReadOnly = true;
             this.nudCadastroClienteID.Size = new System.Drawing.Size(75, 20);
             this.nudCadastroClienteID.TabIndex = 36;
+            this.nudCadastroClienteID.ValueChanged += new System.EventHandler(this.nudCadastroClienteID_ValueChanged);
             // 
             // lblCadastroClienteNome
             // 
@@ -397,132 +403,36 @@
             // 
             // dgvCadastroCliente
             // 
-            this.dgvCadastroCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvCadastroCliente.AllowUserToDeleteRows = false;
+            this.dgvCadastroCliente.AllowUserToResizeColumns = false;
+            this.dgvCadastroCliente.AllowUserToResizeRows = false;
+            this.dgvCadastroCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvCadastroCliente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dgvCadastroCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCadastroCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.NOME,
-            this.CPF,
-            this.RG,
-            this.FILIACAO,
-            this.LOUGRADOURO,
-            this.ENDERECO,
-            this.NUMERO,
-            this.COMPLEMENTO,
-            this.BAIRRO,
-            this.CIDADE,
-            this.ESTADO,
-            this.CEP,
-            this.TELEFONE,
-            this.CELULAR,
-            this.LIMITE_DE_CREDITO,
-            this.STATUS});
+            this.ID,
+            this.Nome,
+            this.Filiacao,
+            this.Cpf,
+            this.Rg,
+            this.Lougradouro,
+            this.Endereco,
+            this.Numero,
+            this.Complemento,
+            this.Bairro,
+            this.Cidade,
+            this.Estado,
+            this.Cep,
+            this.Telefone,
+            this.Celular,
+            this.Limite_De_Credito,
+            this.Status_Cliente});
             this.dgvCadastroCliente.Location = new System.Drawing.Point(12, 252);
             this.dgvCadastroCliente.Name = "dgvCadastroCliente";
+            this.dgvCadastroCliente.ReadOnly = true;
+            this.dgvCadastroCliente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvCadastroCliente.Size = new System.Drawing.Size(780, 191);
             this.dgvCadastroCliente.TabIndex = 69;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.Width = 43;
-            // 
-            // NOME
-            // 
-            this.NOME.HeaderText = "NOME";
-            this.NOME.Name = "NOME";
-            this.NOME.Width = 64;
-            // 
-            // CPF
-            // 
-            this.CPF.HeaderText = "CPF";
-            this.CPF.Name = "CPF";
-            this.CPF.Width = 52;
-            // 
-            // RG
-            // 
-            this.RG.HeaderText = "RG";
-            this.RG.Name = "RG";
-            this.RG.Width = 48;
-            // 
-            // FILIACAO
-            // 
-            this.FILIACAO.HeaderText = "FILIAÇÃO";
-            this.FILIACAO.Name = "FILIACAO";
-            this.FILIACAO.Width = 79;
-            // 
-            // LOUGRADOURO
-            // 
-            this.LOUGRADOURO.HeaderText = "LOUGRADOURO";
-            this.LOUGRADOURO.Name = "LOUGRADOURO";
-            this.LOUGRADOURO.Width = 117;
-            // 
-            // ENDERECO
-            // 
-            this.ENDERECO.HeaderText = "ENDEREÇO";
-            this.ENDERECO.Name = "ENDERECO";
-            this.ENDERECO.Width = 92;
-            // 
-            // NUMERO
-            // 
-            this.NUMERO.HeaderText = "NÚMERO";
-            this.NUMERO.Name = "NUMERO";
-            this.NUMERO.Width = 80;
-            // 
-            // COMPLEMENTO
-            // 
-            this.COMPLEMENTO.HeaderText = "COMPLEMENTO";
-            this.COMPLEMENTO.Name = "COMPLEMENTO";
-            this.COMPLEMENTO.Width = 115;
-            // 
-            // BAIRRO
-            // 
-            this.BAIRRO.HeaderText = "BAIRRO";
-            this.BAIRRO.Name = "BAIRRO";
-            this.BAIRRO.Width = 73;
-            // 
-            // CIDADE
-            // 
-            this.CIDADE.HeaderText = "CIDADE";
-            this.CIDADE.Name = "CIDADE";
-            this.CIDADE.Width = 72;
-            // 
-            // ESTADO
-            // 
-            this.ESTADO.HeaderText = "ESTADO";
-            this.ESTADO.Name = "ESTADO";
-            this.ESTADO.Width = 76;
-            // 
-            // CEP
-            // 
-            this.CEP.HeaderText = "CEP";
-            this.CEP.Name = "CEP";
-            this.CEP.Width = 53;
-            // 
-            // TELEFONE
-            // 
-            this.TELEFONE.HeaderText = "TELEFONE";
-            this.TELEFONE.Name = "TELEFONE";
-            this.TELEFONE.Width = 88;
-            // 
-            // CELULAR
-            // 
-            this.CELULAR.HeaderText = "CELULAR";
-            this.CELULAR.Name = "CELULAR";
-            this.CELULAR.Width = 81;
-            // 
-            // LIMITE_DE_CREDITO
-            // 
-            this.LIMITE_DE_CREDITO.HeaderText = "LIMITE DE CRÉDITO";
-            this.LIMITE_DE_CREDITO.Name = "LIMITE_DE_CREDITO";
-            this.LIMITE_DE_CREDITO.Width = 124;
-            // 
-            // STATUS
-            // 
-            this.STATUS.HeaderText = "STATUS";
-            this.STATUS.Name = "STATUS";
-            this.STATUS.Width = 75;
             // 
             // txtClienteCidade
             // 
@@ -567,6 +477,136 @@
             this.mtbCadastroClienteRg.Name = "mtbCadastroClienteRg";
             this.mtbCadastroClienteRg.Size = new System.Drawing.Size(71, 20);
             this.mtbCadastroClienteRg.TabIndex = 112;
+            // 
+            // controle_GeralDataSet
+            // 
+            this.controle_GeralDataSet.DataSetName = "Controle_GeralDataSet";
+            this.controle_GeralDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // controleGeralDataSetBindingSource
+            // 
+            this.controleGeralDataSetBindingSource.DataSource = this.controle_GeralDataSet;
+            this.controleGeralDataSetBindingSource.Position = 0;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 43;
+            // 
+            // Nome
+            // 
+            this.Nome.HeaderText = "NOME";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 64;
+            // 
+            // Filiacao
+            // 
+            this.Filiacao.HeaderText = "FILIAÇÃO";
+            this.Filiacao.Name = "Filiacao";
+            this.Filiacao.ReadOnly = true;
+            this.Filiacao.Width = 79;
+            // 
+            // Cpf
+            // 
+            this.Cpf.HeaderText = "CPF";
+            this.Cpf.Name = "Cpf";
+            this.Cpf.ReadOnly = true;
+            this.Cpf.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Cpf.Width = 52;
+            // 
+            // Rg
+            // 
+            this.Rg.HeaderText = "RG";
+            this.Rg.Name = "Rg";
+            this.Rg.ReadOnly = true;
+            this.Rg.Width = 48;
+            // 
+            // Lougradouro
+            // 
+            this.Lougradouro.HeaderText = "LOUGRADOURO";
+            this.Lougradouro.Name = "Lougradouro";
+            this.Lougradouro.ReadOnly = true;
+            this.Lougradouro.Width = 117;
+            // 
+            // Endereco
+            // 
+            this.Endereco.HeaderText = "ENDEREÇO";
+            this.Endereco.Name = "Endereco";
+            this.Endereco.ReadOnly = true;
+            this.Endereco.Width = 92;
+            // 
+            // Numero
+            // 
+            this.Numero.HeaderText = "NÚMERO";
+            this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
+            this.Numero.Width = 80;
+            // 
+            // Complemento
+            // 
+            this.Complemento.HeaderText = "COMPLEMENTO";
+            this.Complemento.Name = "Complemento";
+            this.Complemento.ReadOnly = true;
+            this.Complemento.Width = 115;
+            // 
+            // Bairro
+            // 
+            this.Bairro.HeaderText = "BAIRRO";
+            this.Bairro.Name = "Bairro";
+            this.Bairro.ReadOnly = true;
+            this.Bairro.Width = 73;
+            // 
+            // Cidade
+            // 
+            this.Cidade.HeaderText = "CIDADE";
+            this.Cidade.Name = "Cidade";
+            this.Cidade.ReadOnly = true;
+            this.Cidade.Width = 72;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "ESTADO";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Width = 76;
+            // 
+            // Cep
+            // 
+            this.Cep.HeaderText = "CEP";
+            this.Cep.Name = "Cep";
+            this.Cep.ReadOnly = true;
+            this.Cep.Width = 53;
+            // 
+            // Telefone
+            // 
+            this.Telefone.HeaderText = "TELEFONE";
+            this.Telefone.Name = "Telefone";
+            this.Telefone.ReadOnly = true;
+            this.Telefone.Width = 88;
+            // 
+            // Celular
+            // 
+            this.Celular.HeaderText = "CELULAR";
+            this.Celular.Name = "Celular";
+            this.Celular.ReadOnly = true;
+            this.Celular.Width = 81;
+            // 
+            // Limite_De_Credito
+            // 
+            this.Limite_De_Credito.HeaderText = "LIMITE DE CRÉDITO";
+            this.Limite_De_Credito.Name = "Limite_De_Credito";
+            this.Limite_De_Credito.ReadOnly = true;
+            this.Limite_De_Credito.Width = 124;
+            // 
+            // Status_Cliente
+            // 
+            this.Status_Cliente.HeaderText = "STATUS";
+            this.Status_Cliente.Name = "Status_Cliente";
+            this.Status_Cliente.ReadOnly = true;
+            this.Status_Cliente.Width = 75;
             // 
             // frmCliente
             // 
@@ -620,8 +660,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Clientes";
             this.Load += new System.EventHandler(this.frmCliente_Load);
+            this.Shown += new System.EventHandler(this.frmCliente_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.nudCadastroClienteID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadastroCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.controle_GeralDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.controleGeralDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -651,23 +694,6 @@
         private System.Windows.Forms.Label lblCadastroClienteRg;
         private System.Windows.Forms.Label lblClienteCidade;
         private System.Windows.Forms.Label lblClienteBanco;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NOME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FILIACAO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LOUGRADOURO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ENDERECO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NUMERO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COMPLEMENTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BAIRRO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CIDADE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CEP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TELEFONE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CELULAR;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LIMITE_DE_CREDITO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STATUS;
         public System.Windows.Forms.DataGridView dgvCadastroCliente;
         public System.Windows.Forms.ComboBox cboCadastroClienteStatus;
         public System.Windows.Forms.TextBox txtCadastroClienteLimiteCredito;
@@ -687,5 +713,24 @@
         public System.Windows.Forms.Label lblClienteBancoSituacao;
         public System.Windows.Forms.NumericUpDown nudCadastroClienteID;
         public System.Windows.Forms.MaskedTextBox mtbCadastroClienteRg;
+        private System.Windows.Forms.BindingSource controleGeralDataSetBindingSource;
+        private Controle_GeralDataSet controle_GeralDataSet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Filiacao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cpf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lougradouro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Endereco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Complemento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Bairro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Celular;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Limite_De_Credito;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status_Cliente;
     }
 }

@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Controle_GeralModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="Cpf" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="Rg" Type="nvarchar" MaxLength="13" Nullable="false" />
+          <Property Name="Lougradouro" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Endereco" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Numero" Type="nvarchar" MaxLength="5" />
+          <Property Name="Complemento" Type="nvarchar" MaxLength="10" />
+          <Property Name="Bairro" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Cidade" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Estado" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="Cep" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Telefone" Type="nvarchar" MaxLength="14" />
+          <Property Name="Celular" Type="nvarchar" MaxLength="16" />
+          <Property Name="Filiacao" Type="nvarchar" MaxLength="20" />
+          <Property Name="Limite_De_Credito" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Status_Cliente" Type="nvarchar" MaxLength="12" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fornecedor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="Cnpj" Type="nvarchar" MaxLength="22" Nullable="false" />
+          <Property Name="Lougradouro" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Endereco" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Numero" Type="nvarchar" MaxLength="5" />
+          <Property Name="Complemento" Type="nvarchar" MaxLength="10" />
+          <Property Name="Bairro" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Cidade" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Estado" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="Cep" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Telefone" Type="nvarchar" MaxLength="14" />
+          <Property Name="Celular" Type="nvarchar" MaxLength="16" />
+          <Property Name="Status_Fornecedor" Type="nvarchar" MaxLength="12" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pedido">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Data_Elaboracao" Type="date" Nullable="false" />
+          <Property Name="Valor_Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Quantidade" Type="decimal" Precision="10" Scale="1" Nullable="false" />
+          <Property Name="Status_Pedido" Type="nvarchar" MaxLength="12" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Produto">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="Data_Adicao" Type="date" Nullable="false" />
+          <Property Name="Data_Fabricacao" Type="date" Nullable="false" />
+          <Property Name="Data_Vencimento" Type="date" Nullable="false" />
+          <Property Name="Valor" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Quantidade" Type="decimal" Precision="10" Scale="1" Nullable="false" />
+          <Property Name="Categoria" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Status_Produto" Type="nvarchar" MaxLength="12" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QuantidadePedido">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Data_Pedido" Type="date" Nullable="false" />
+          <Property Name="Status_Quantidade" Type="nvarchar" MaxLength="12" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Controle_GeralModelStoreContainer">
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fornecedor" EntityType="Self.Fornecedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pedido" EntityType="Self.Pedido" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Produto" EntityType="Self.Produto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuantidadePedido" EntityType="Self.QuantidadePedido" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Controle_GeralModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cpf" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Rg" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Lougradouro" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Endereco" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Numero" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Complemento" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Bairro" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cidade" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Estado" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Cep" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefone" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="Celular" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="Filiacao" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Limite_De_Credito" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Status_Cliente" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fornecedor" BaseType="Controle_GeralModel.Produto">
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cnpj" Type="String" MaxLength="22" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Lougradouro" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Endereco" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Numero" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Complemento" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Bairro" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cidade" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Estado" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Cep" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefone" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="Celular" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="Status_Fornecedor" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pedido" BaseType="Controle_GeralModel.Cliente">
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Data_Elaboracao" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Valor_Total" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Quantidade" Type="Decimal" Precision="10" Scale="1" Nullable="false" />
+          <Property Name="Status_Pedido" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Produto" BaseType="Controle_GeralModel.QuantidadePedido">
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Nome" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Data_Adicao" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Data_Fabricacao" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Data_Vencimento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Valor" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Quantidade" Type="Decimal" Precision="10" Scale="1" Nullable="false" />
+          <Property Name="Categoria" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status_Produto" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QuantidadePedido" BaseType="Controle_GeralModel.Pedido">
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Data_Pedido" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Status_Quantidade" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Controle_GeralEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clientes" EntityType="Self.Cliente" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Controle_GeralModelStoreContainer" CdmEntityContainer="Controle_GeralEntities">
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="IsTypeOf(Controle_GeralModel.Cliente)">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Status_Cliente" ColumnName="Status_Cliente" />
+                <ScalarProperty Name="Limite_De_Credito" ColumnName="Limite_De_Credito" />
+                <ScalarProperty Name="Filiacao" ColumnName="Filiacao" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+                <ScalarProperty Name="Cep" ColumnName="Cep" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+                <ScalarProperty Name="Complemento" ColumnName="Complemento" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="Lougradouro" ColumnName="Lougradouro" />
+                <ScalarProperty Name="Rg" ColumnName="Rg" />
+                <ScalarProperty Name="Cpf" ColumnName="Cpf" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <Condition ColumnName="ID" Value="" />
+              </MappingFragment>
+              <MappingFragment StoreEntitySet="Pedido">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Controle_GeralModel.Pedido)">
+              <MappingFragment StoreEntitySet="Pedido">
+                <ScalarProperty Name="Status_Pedido" ColumnName="Status_Pedido" />
+                <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
+                <ScalarProperty Name="Valor_Total" ColumnName="Valor_Total" />
+                <ScalarProperty Name="Data_Elaboracao" ColumnName="Data_Elaboracao" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Controle_GeralModel.Produto)" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+              <MappingFragment StoreEntitySet="Produto">
+                
+                <ScalarProperty Name="Status_Produto" ColumnName="Status_Produto" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Data_Vencimento" ColumnName="Data_Vencimento" />
+                <ScalarProperty Name="Data_Fabricacao" ColumnName="Data_Fabricacao" />
+                <ScalarProperty Name="Data_Adicao" ColumnName="Data_Adicao" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Controle_GeralModel.Fornecedor)" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+              <MappingFragment StoreEntitySet="Fornecedor">
+                <ScalarProperty Name="Status_Fornecedor" ColumnName="Status_Fornecedor" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+                <ScalarProperty Name="Cep" ColumnName="Cep" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+                <ScalarProperty Name="Complemento" ColumnName="Complemento" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="Lougradouro" ColumnName="Lougradouro" />
+                <ScalarProperty Name="Cnpj" ColumnName="Cnpj" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Controle_GeralModel.QuantidadePedido)" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+              <MappingFragment StoreEntitySet="QuantidadePedido">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Status_Quantidade" ColumnName="Status_Quantidade" />
+                <ScalarProperty Name="Data_Pedido" ColumnName="Data_Pedido" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

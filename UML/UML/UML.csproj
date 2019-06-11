@@ -140,6 +140,8 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -151,6 +153,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controle_Geral.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Controle_Geral.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controle_Geral.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Controle_Geral.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controle_Geral.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Controle_Geral.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Controle_GeralDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -225,6 +242,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EntityDeploy Include="Controle_Geral.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Controle_Geral.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Controle_Geral.edmx.diagram">
+      <DependentUpon>Controle_Geral.edmx</DependentUpon>
+    </None>
     <None Include="Controle_GeralDataSet.xsc">
       <DependentUpon>Controle_GeralDataSet.xsd</DependentUpon>
     </None>
@@ -271,6 +295,21 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controle_Geral.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Controle_Geral.edmx</DependentUpon>
+      <LastGenOutput>Controle_Geral.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Controle_Geral.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Controle_Geral.edmx</DependentUpon>
+      <LastGenOutput>Controle_Geral.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
