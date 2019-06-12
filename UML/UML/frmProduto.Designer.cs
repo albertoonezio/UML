@@ -49,13 +49,6 @@
             this.mtbProdutoDataFabricacao = new System.Windows.Forms.MaskedTextBox();
             this.lblProdutoBanco = new System.Windows.Forms.Label();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FORNECEDOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VALOR_UNIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATA_ADICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STATUS_ESTOQUE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblProdutoBancoSituacao = new System.Windows.Forms.Label();
             this.lblProdutoDataVencimento = new System.Windows.Forms.Label();
             this.mtbProdutoDataVencimento = new System.Windows.Forms.MaskedTextBox();
@@ -64,6 +57,15 @@
             this.cboProdutoStatus = new System.Windows.Forms.ComboBox();
             this.lblProdutoCategoria = new System.Windows.Forms.Label();
             this.cboProdutoCategoria = new System.Windows.Forms.ComboBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FORNECEDOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VALOR_UNIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATA_ADICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data_Fabricacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data_Vencimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STATUS_ESTOQUE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nudProdutoID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudProdutoQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
@@ -238,6 +240,8 @@
             // 
             // dgvProdutos
             // 
+            this.dgvProdutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvProdutos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -246,53 +250,13 @@
             this.QUANTIDADE,
             this.VALOR_UNIDADE,
             this.DATA_ADICAO,
+            this.Data_Fabricacao,
+            this.Data_Vencimento,
             this.STATUS_ESTOQUE});
             this.dgvProdutos.Location = new System.Drawing.Point(17, 247);
             this.dgvProdutos.Name = "dgvProdutos";
             this.dgvProdutos.Size = new System.Drawing.Size(778, 201);
             this.dgvProdutos.TabIndex = 99;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Width = 30;
-            // 
-            // NOME
-            // 
-            this.NOME.HeaderText = "NOME";
-            this.NOME.Name = "NOME";
-            this.NOME.Width = 200;
-            // 
-            // FORNECEDOR
-            // 
-            this.FORNECEDOR.HeaderText = "FORNECEDOR";
-            this.FORNECEDOR.Name = "FORNECEDOR";
-            this.FORNECEDOR.Width = 200;
-            // 
-            // QUANTIDADE
-            // 
-            this.QUANTIDADE.HeaderText = "QUANTIDADE";
-            this.QUANTIDADE.Name = "QUANTIDADE";
-            this.QUANTIDADE.Width = 50;
-            // 
-            // VALOR_UNIDADE
-            // 
-            this.VALOR_UNIDADE.HeaderText = "VALOR UNIDADE";
-            this.VALOR_UNIDADE.Name = "VALOR_UNIDADE";
-            this.VALOR_UNIDADE.Width = 70;
-            // 
-            // DATA_ADICAO
-            // 
-            this.DATA_ADICAO.HeaderText = "DATA ADIÇÃO";
-            this.DATA_ADICAO.Name = "DATA_ADICAO";
-            this.DATA_ADICAO.Width = 50;
-            // 
-            // STATUS_ESTOQUE
-            // 
-            this.STATUS_ESTOQUE.HeaderText = "STATUS ESTOQUE";
-            this.STATUS_ESTOQUE.Name = "STATUS_ESTOQUE";
-            this.STATUS_ESTOQUE.Width = 80;
             // 
             // lblProdutoBancoSituacao
             // 
@@ -366,6 +330,60 @@
             this.cboProdutoCategoria.Size = new System.Drawing.Size(238, 21);
             this.cboProdutoCategoria.TabIndex = 107;
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Width = 43;
+            // 
+            // NOME
+            // 
+            this.NOME.HeaderText = "NOME";
+            this.NOME.Name = "NOME";
+            this.NOME.Width = 64;
+            // 
+            // FORNECEDOR
+            // 
+            this.FORNECEDOR.HeaderText = "FORNECEDOR";
+            this.FORNECEDOR.Name = "FORNECEDOR";
+            this.FORNECEDOR.Width = 107;
+            // 
+            // QUANTIDADE
+            // 
+            this.QUANTIDADE.HeaderText = "QUANTIDADE";
+            this.QUANTIDADE.Name = "QUANTIDADE";
+            this.QUANTIDADE.Width = 103;
+            // 
+            // VALOR_UNIDADE
+            // 
+            this.VALOR_UNIDADE.HeaderText = "VALOR UNIDADE";
+            this.VALOR_UNIDADE.Name = "VALOR_UNIDADE";
+            this.VALOR_UNIDADE.Width = 110;
+            // 
+            // DATA_ADICAO
+            // 
+            this.DATA_ADICAO.HeaderText = "DATA ADIÇÃO";
+            this.DATA_ADICAO.Name = "DATA_ADICAO";
+            this.DATA_ADICAO.Width = 96;
+            // 
+            // Data_Fabricacao
+            // 
+            this.Data_Fabricacao.HeaderText = "DATA FABRICAÇÃO";
+            this.Data_Fabricacao.Name = "Data_Fabricacao";
+            this.Data_Fabricacao.Width = 120;
+            // 
+            // Data_Vencimento
+            // 
+            this.Data_Vencimento.HeaderText = "DATA VENCIMENTO";
+            this.Data_Vencimento.Name = "Data_Vencimento";
+            this.Data_Vencimento.Width = 123;
+            // 
+            // STATUS_ESTOQUE
+            // 
+            this.STATUS_ESTOQUE.HeaderText = "STATUS ESTOQUE";
+            this.STATUS_ESTOQUE.Name = "STATUS_ESTOQUE";
+            this.STATUS_ESTOQUE.Width = 119;
+            // 
             // frmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -428,13 +446,6 @@
         private System.Windows.Forms.Label lblProdutoDataFabricacao;
         private System.Windows.Forms.Label lblProdutoQuantidade;
         private System.Windows.Forms.Label lblProdutoBanco;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NOME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FORNECEDOR;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QUANTIDADE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VALOR_UNIDADE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DATA_ADICAO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STATUS_ESTOQUE;
         public System.Windows.Forms.NumericUpDown nudProdutoID;
         public System.Windows.Forms.TextBox txtProdutoNome;
         public System.Windows.Forms.TextBox txtProdutoFornecedor;
@@ -450,5 +461,14 @@
         public System.Windows.Forms.ComboBox cboProdutoStatus;
         private System.Windows.Forms.Label lblProdutoCategoria;
         private System.Windows.Forms.ComboBox cboProdutoCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FORNECEDOR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QUANTIDADE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VALOR_UNIDADE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DATA_ADICAO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Fabricacao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Vencimento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STATUS_ESTOQUE;
     }
 }

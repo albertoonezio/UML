@@ -660,7 +660,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Clientes";
             this.Load += new System.EventHandler(this.frmCliente_Load);
-            this.Shown += new System.EventHandler(this.frmCliente_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.nudCadastroClienteID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadastroCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.controle_GeralDataSet)).EndInit();

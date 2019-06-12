@@ -24,5 +24,13 @@ namespace UML
 
             MessageBox.Show("Produto cadastrado com sucesso!");
         }
+
+        public void Remover(Produto produto)
+        {
+            contexto.Cliente.Remove(produto);
+            contexto.SaveChanges();
+
+            MessageBox.Show("Produto removido com sucesso!");
+        }
     }
 }

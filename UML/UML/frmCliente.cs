@@ -112,9 +112,21 @@ namespace UML
 
         private void btnCadastroClienteDeletar_Click(object sender, EventArgs e)
         {
-            ManipuladorCliente manipular = new ManipuladorCliente();
-            Cliente cliente = manipular.BuscaPorId(2);
-            manipular.Remover(cliente);
+            EntidadesContext contexto = new EntidadesContext();
+            ManipuladorCliente manipulador = new ManipuladorCliente();
+
+            int buscaId = Convert.ToInt32(nudCadastroClienteID.Value);
+
+            var busca = from b in contexto.Cliente
+                        where b.ID == buscaId
+                        select b;
+
+            foreach (var item in busca)
+            {
+                manipulador.Remover(item);
+            }
+
+            preencherDataGrid();
         }
 
         private void nudCadastroClienteID_ValueChanged(object sender, EventArgs e)
@@ -124,27 +136,27 @@ namespace UML
                 EntidadesContext contexto = new EntidadesContext();
                 int buscaId = Convert.ToInt32(nudCadastroClienteID.Value);
 
-                var busca = from p in contexto.Cliente
-                            where p.ID == buscaId
+                var busca = from b in contexto.Cliente
+                            where b.ID == buscaId
                             select new
                             {
-                                p.ID,
-                                p.Nome,
-                                p.Lougradouro,
-                                p.Endereco,
-                                p.Numero,
-                                p.Complemento,
-                                p.Bairro,
-                                p.Cidade,
-                                p.Estado,
-                                p.Cep,
-                                p.Telefone,
-                                p.Celular,
-                                p.Filiacao,
-                                p.Status_Cliente,
-                                p.Cpf,
-                                p.Rg,
-                                p.Limite_De_Credito
+                                b.ID,
+                                b.Nome,
+                                b.Lougradouro,
+                                b.Endereco,
+                                b.Numero,
+                                b.Complemento,
+                                b.Bairro,
+                                b.Cidade,
+                                b.Estado,
+                                b.Cep,
+                                b.Telefone,
+                                b.Celular,
+                                b.Filiacao,
+                                b.Status_Cliente,
+                                b.Cpf,
+                                b.Rg,
+                                b.Limite_De_Credito
                             };
 
                 foreach (var cliente in busca)
@@ -175,14 +187,10 @@ namespace UML
             }
         }
 
-        private void frmCliente_Shown(object sender, EventArgs e)
-        {
-            
-        }
-
         public void validarDados()
         {
-            
+            DataSet dts = new DataSet();
+            dgvCadastroCliente.DataSource = dts.Tables["Cliente"];
         }
 
         public void preencherDataGrid()
@@ -223,6 +231,7 @@ namespace UML
                 }
 
                 dgvCadastroCliente.RowCount = total;
+                dgvCadastroCliente.Refresh();
 
                 lblClienteBancoSituacao.Text = "ONLINE";
                 lblClienteBancoSituacao.ForeColor = Color.ForestGreen;
