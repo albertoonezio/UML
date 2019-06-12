@@ -66,13 +66,6 @@
             this.mtbCadastroClienteCpf = new System.Windows.Forms.MaskedTextBox();
             this.lblCadastroClienteRg = new System.Windows.Forms.Label();
             this.dgvCadastroCliente = new System.Windows.Forms.DataGridView();
-            this.txtClienteCidade = new System.Windows.Forms.TextBox();
-            this.lblClienteCidade = new System.Windows.Forms.Label();
-            this.lblClienteBancoSituacao = new System.Windows.Forms.Label();
-            this.lblClienteBanco = new System.Windows.Forms.Label();
-            this.mtbCadastroClienteRg = new System.Windows.Forms.MaskedTextBox();
-            this.controle_GeralDataSet = new UML.Controle_GeralDataSet();
-            this.controleGeralDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Filiacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,6 +83,13 @@
             this.Celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Limite_De_Credito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtClienteCidade = new System.Windows.Forms.TextBox();
+            this.lblClienteCidade = new System.Windows.Forms.Label();
+            this.lblClienteBancoSituacao = new System.Windows.Forms.Label();
+            this.lblClienteBanco = new System.Windows.Forms.Label();
+            this.mtbCadastroClienteRg = new System.Windows.Forms.MaskedTextBox();
+            this.controle_GeralDataSet = new UML.Controle_GeralDataSet();
+            this.controleGeralDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudCadastroClienteID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadastroCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.controle_GeralDataSet)).BeginInit();
@@ -293,7 +293,7 @@
             // lblCadastroClienteFiliacao
             // 
             this.lblCadastroClienteFiliacao.AutoSize = true;
-            this.lblCadastroClienteFiliacao.Location = new System.Drawing.Point(549, 126);
+            this.lblCadastroClienteFiliacao.Location = new System.Drawing.Point(552, 126);
             this.lblCadastroClienteFiliacao.Name = "lblCadastroClienteFiliacao";
             this.lblCadastroClienteFiliacao.Size = new System.Drawing.Size(57, 13);
             this.lblCadastroClienteFiliacao.TabIndex = 41;
@@ -301,9 +301,9 @@
             // 
             // txtCadastroClienteFiliacao
             // 
-            this.txtCadastroClienteFiliacao.Location = new System.Drawing.Point(604, 118);
+            this.txtCadastroClienteFiliacao.Location = new System.Drawing.Point(612, 118);
             this.txtCadastroClienteFiliacao.Name = "txtCadastroClienteFiliacao";
-            this.txtCadastroClienteFiliacao.Size = new System.Drawing.Size(158, 20);
+            this.txtCadastroClienteFiliacao.Size = new System.Drawing.Size(150, 20);
             this.txtCadastroClienteFiliacao.TabIndex = 4;
             // 
             // lblCadastroClienteEndereco
@@ -434,60 +434,6 @@
             this.dgvCadastroCliente.Size = new System.Drawing.Size(780, 191);
             this.dgvCadastroCliente.TabIndex = 69;
             // 
-            // txtClienteCidade
-            // 
-            this.txtClienteCidade.Location = new System.Drawing.Point(102, 226);
-            this.txtClienteCidade.Name = "txtClienteCidade";
-            this.txtClienteCidade.Size = new System.Drawing.Size(249, 20);
-            this.txtClienteCidade.TabIndex = 10;
-            // 
-            // lblClienteCidade
-            // 
-            this.lblClienteCidade.AutoSize = true;
-            this.lblClienteCidade.Location = new System.Drawing.Point(49, 231);
-            this.lblClienteCidade.Name = "lblClienteCidade";
-            this.lblClienteCidade.Size = new System.Drawing.Size(50, 13);
-            this.lblClienteCidade.TabIndex = 108;
-            this.lblClienteCidade.Text = "CIDADE:";
-            // 
-            // lblClienteBancoSituacao
-            // 
-            this.lblClienteBancoSituacao.AutoSize = true;
-            this.lblClienteBancoSituacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClienteBancoSituacao.ForeColor = System.Drawing.Color.Red;
-            this.lblClienteBancoSituacao.Location = new System.Drawing.Point(734, 7);
-            this.lblClienteBancoSituacao.Name = "lblClienteBancoSituacao";
-            this.lblClienteBancoSituacao.Size = new System.Drawing.Size(58, 13);
-            this.lblClienteBancoSituacao.TabIndex = 111;
-            this.lblClienteBancoSituacao.Text = "OFFLINE";
-            // 
-            // lblClienteBanco
-            // 
-            this.lblClienteBanco.AutoSize = true;
-            this.lblClienteBanco.Location = new System.Drawing.Point(685, 7);
-            this.lblClienteBanco.Name = "lblClienteBanco";
-            this.lblClienteBanco.Size = new System.Drawing.Size(47, 13);
-            this.lblClienteBanco.TabIndex = 110;
-            this.lblClienteBanco.Text = "BANCO:";
-            // 
-            // mtbCadastroClienteRg
-            // 
-            this.mtbCadastroClienteRg.Location = new System.Drawing.Point(468, 82);
-            this.mtbCadastroClienteRg.Mask = "000.000-000";
-            this.mtbCadastroClienteRg.Name = "mtbCadastroClienteRg";
-            this.mtbCadastroClienteRg.Size = new System.Drawing.Size(71, 20);
-            this.mtbCadastroClienteRg.TabIndex = 112;
-            // 
-            // controle_GeralDataSet
-            // 
-            this.controle_GeralDataSet.DataSetName = "Controle_GeralDataSet";
-            this.controle_GeralDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // controleGeralDataSetBindingSource
-            // 
-            this.controleGeralDataSetBindingSource.DataSource = this.controle_GeralDataSet;
-            this.controleGeralDataSetBindingSource.Position = 0;
-            // 
             // ID
             // 
             this.ID.HeaderText = "ID";
@@ -607,6 +553,60 @@
             this.Status_Cliente.Name = "Status_Cliente";
             this.Status_Cliente.ReadOnly = true;
             this.Status_Cliente.Width = 75;
+            // 
+            // txtClienteCidade
+            // 
+            this.txtClienteCidade.Location = new System.Drawing.Point(102, 226);
+            this.txtClienteCidade.Name = "txtClienteCidade";
+            this.txtClienteCidade.Size = new System.Drawing.Size(249, 20);
+            this.txtClienteCidade.TabIndex = 10;
+            // 
+            // lblClienteCidade
+            // 
+            this.lblClienteCidade.AutoSize = true;
+            this.lblClienteCidade.Location = new System.Drawing.Point(49, 231);
+            this.lblClienteCidade.Name = "lblClienteCidade";
+            this.lblClienteCidade.Size = new System.Drawing.Size(50, 13);
+            this.lblClienteCidade.TabIndex = 108;
+            this.lblClienteCidade.Text = "CIDADE:";
+            // 
+            // lblClienteBancoSituacao
+            // 
+            this.lblClienteBancoSituacao.AutoSize = true;
+            this.lblClienteBancoSituacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClienteBancoSituacao.ForeColor = System.Drawing.Color.Red;
+            this.lblClienteBancoSituacao.Location = new System.Drawing.Point(734, 7);
+            this.lblClienteBancoSituacao.Name = "lblClienteBancoSituacao";
+            this.lblClienteBancoSituacao.Size = new System.Drawing.Size(58, 13);
+            this.lblClienteBancoSituacao.TabIndex = 111;
+            this.lblClienteBancoSituacao.Text = "OFFLINE";
+            // 
+            // lblClienteBanco
+            // 
+            this.lblClienteBanco.AutoSize = true;
+            this.lblClienteBanco.Location = new System.Drawing.Point(685, 7);
+            this.lblClienteBanco.Name = "lblClienteBanco";
+            this.lblClienteBanco.Size = new System.Drawing.Size(47, 13);
+            this.lblClienteBanco.TabIndex = 110;
+            this.lblClienteBanco.Text = "BANCO:";
+            // 
+            // mtbCadastroClienteRg
+            // 
+            this.mtbCadastroClienteRg.Location = new System.Drawing.Point(468, 82);
+            this.mtbCadastroClienteRg.Mask = "000.000-000";
+            this.mtbCadastroClienteRg.Name = "mtbCadastroClienteRg";
+            this.mtbCadastroClienteRg.Size = new System.Drawing.Size(71, 20);
+            this.mtbCadastroClienteRg.TabIndex = 112;
+            // 
+            // controle_GeralDataSet
+            // 
+            this.controle_GeralDataSet.DataSetName = "Controle_GeralDataSet";
+            this.controle_GeralDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // controleGeralDataSetBindingSource
+            // 
+            this.controleGeralDataSetBindingSource.DataSource = this.controle_GeralDataSet;
+            this.controleGeralDataSetBindingSource.Position = 0;
             // 
             // frmCliente
             // 

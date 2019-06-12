@@ -30,16 +30,12 @@ namespace UML.Entidade
 
         public void Loader()
         {
-            frmCliente cliente = new frmCliente();
-            
 
-            // cliente.dgvCadastroCliente.DataSource = retornarDados.ToList();
         }
 
         public void Cadastrar()
         {
-            
-            
+
         }
 
         public void Editar(int id)

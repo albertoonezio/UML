@@ -37,6 +37,8 @@ namespace UML
             mtbCadastroClienteTelefone.Enabled = false;
             mtbCadastroClienteCelular.Enabled = false;
             txtCadastroClienteLimiteCredito.Enabled = false;
+
+            preencherDataGrid();
         }
 
         private void btnCadastroClienteCriar_Click(object sender, EventArgs e)
@@ -61,27 +63,6 @@ namespace UML
 
         private void btnCadastroClienteSalvar_Click(object sender, EventArgs e)
         {
-            ValidarCampos validar = new ValidarCampos();
-            validar.ValidarCliente(
-                Convert.ToInt32(nudCadastroClienteID.Value),
-                txtCadastroClienteNome.Text,
-                cboCadastroClienteLogadouro.Text,
-                txtCadastroClienteEndereco.Text,
-                txtCadastroClienteNumero.Text,
-                txtCadastroClienteComplemento.Text,
-                txtCadastroClienteBairro.Text,
-                mtbCadastroClienteCep.Text,
-                cboCadastroClienteEstado.Text,
-                mtbCadastroClienteTelefone.Text,
-                mtbCadastroClienteCelular.Text,
-                txtCadastroClienteFiliacao.Text,
-                cboCadastroClienteStatus.Text,
-                txtCadastroClienteLimiteCredito.Text,
-                mtbCadastroClienteCpf.Text,
-                mtbCadastroClienteRg.Text,
-                txtClienteCidade.Text
-                );
-
             ManipuladorCliente manipular = new ManipuladorCliente();
             Cliente cliente = new Cliente()
             {
@@ -104,11 +85,29 @@ namespace UML
             };
 
             manipular.Salvar(cliente);
+
+            preencherDataGrid();
         }
 
         private void btnCadastroClienteEditar_Click(object sender, EventArgs e)
         {
             nudCadastroClienteID.ReadOnly = false;
+            mtbCadastroClienteCpf.Enabled = true;
+            mtbCadastroClienteRg.Enabled = true;
+            cboCadastroClienteStatus.Enabled = true;
+            txtCadastroClienteNome.Enabled = true;
+            txtCadastroClienteFiliacao.Enabled = true;
+            cboCadastroClienteLogadouro.Enabled = true;
+            txtCadastroClienteEndereco.Enabled = true;
+            cboCadastroClienteEstado.Enabled = true;
+            txtCadastroClienteNumero.Enabled = true;
+            txtCadastroClienteComplemento.Enabled = true;
+            txtCadastroClienteBairro.Enabled = true;
+            txtClienteCidade.Enabled = true;
+            mtbCadastroClienteCep.Enabled = true;
+            mtbCadastroClienteTelefone.Enabled = true;
+            mtbCadastroClienteCelular.Enabled = true;
+            txtCadastroClienteLimiteCredito.Enabled = true;
         }
 
         private void btnCadastroClienteDeletar_Click(object sender, EventArgs e)
@@ -120,69 +119,88 @@ namespace UML
 
         private void nudCadastroClienteID_ValueChanged(object sender, EventArgs e)
         {
-            EntidadesContext contexto = new EntidadesContext();
-            int buscaId = Convert.ToInt32(nudCadastroClienteID.Value);
-
-            var busca = from p in contexto.Cliente
-                        where p.ID == buscaId
-                        select new
-                        {
-                            p.ID,
-                            p.Nome,
-                            p.Lougradouro,
-                            p.Endereco,
-                            p.Numero,
-                            p.Complemento,
-                            p.Bairro,
-                            p.Cidade,
-                            p.Estado,
-                            p.Cep,
-                            p.Telefone,
-                            p.Celular,
-                            p.Filiacao,
-                            p.Status_Cliente,
-                            p.Cpf,
-                            p.Rg,
-                            p.Limite_De_Credito
-                        };
-
-            foreach (var cliente in busca)
+            try
             {
-                nudCadastroClienteID.Value = cliente.ID;
-                txtCadastroClienteNome.Text = cliente.Nome;
-                cboCadastroClienteLogadouro.Text = cliente.Lougradouro;
-                txtCadastroClienteEndereco.Text = cliente.Endereco;
-                txtCadastroClienteNumero.Text = cliente.Numero;
-                txtCadastroClienteComplemento.Text = cliente.Complemento;
-                txtCadastroClienteBairro.Text = cliente.Bairro;
-                txtClienteCidade.Text = cliente.Cidade;
-                cboCadastroClienteEstado.Text = cliente.Estado;
-                mtbCadastroClienteCep.Text = cliente.Cep;
-                mtbCadastroClienteTelefone.Text = cliente.Telefone;
-                mtbCadastroClienteCelular.Text = cliente.Celular;
-                txtCadastroClienteFiliacao.Text = cliente.Filiacao;
-                cboCadastroClienteStatus.Text = cliente.Status_Cliente;
-                txtCadastroClienteLimiteCredito.Text = cliente.Limite_De_Credito; 
-                mtbCadastroClienteCpf.Text = cliente.Cpf;
-                mtbCadastroClienteRg.Text = cliente.Rg;
+                EntidadesContext contexto = new EntidadesContext();
+                int buscaId = Convert.ToInt32(nudCadastroClienteID.Value);
+
+                var busca = from p in contexto.Cliente
+                            where p.ID == buscaId
+                            select new
+                            {
+                                p.ID,
+                                p.Nome,
+                                p.Lougradouro,
+                                p.Endereco,
+                                p.Numero,
+                                p.Complemento,
+                                p.Bairro,
+                                p.Cidade,
+                                p.Estado,
+                                p.Cep,
+                                p.Telefone,
+                                p.Celular,
+                                p.Filiacao,
+                                p.Status_Cliente,
+                                p.Cpf,
+                                p.Rg,
+                                p.Limite_De_Credito
+                            };
+
+                foreach (var cliente in busca)
+                {
+                    nudCadastroClienteID.Value = cliente.ID;
+                    txtCadastroClienteNome.Text = cliente.Nome;
+                    cboCadastroClienteLogadouro.Text = cliente.Lougradouro;
+                    txtCadastroClienteEndereco.Text = cliente.Endereco;
+                    txtCadastroClienteNumero.Text = cliente.Numero;
+                    txtCadastroClienteComplemento.Text = cliente.Complemento;
+                    txtCadastroClienteBairro.Text = cliente.Bairro;
+                    txtClienteCidade.Text = cliente.Cidade;
+                    cboCadastroClienteEstado.Text = cliente.Estado;
+                    mtbCadastroClienteCep.Text = cliente.Cep;
+                    mtbCadastroClienteTelefone.Text = cliente.Telefone;
+                    mtbCadastroClienteCelular.Text = cliente.Celular;
+                    txtCadastroClienteFiliacao.Text = cliente.Filiacao;
+                    cboCadastroClienteStatus.Text = cliente.Status_Cliente;
+                    txtCadastroClienteLimiteCredito.Text = cliente.Limite_De_Credito;
+                    mtbCadastroClienteCpf.Text = cliente.Cpf;
+                    mtbCadastroClienteRg.Text = cliente.Rg;
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Dados não carregados");
             }
         }
 
         private void frmCliente_Shown(object sender, EventArgs e)
         {
-            EntidadesContext contexto = new EntidadesContext();
-            int i = 0;
-            var retornarDados = from d in contexto.Cliente
-                                select d;
+            
+        }
 
-            int total = retornarDados.Count();
-            //MessageBox.Show(Convert.ToString(total));
-            nudCadastroClienteID.Maximum = total;
+        public void validarDados()
+        {
+            
+        }
 
-            foreach (var item in retornarDados)
+        public void preencherDataGrid()
+        {
+            try
             {
-                dgvCadastroCliente.Rows.Add(new object[] 
+                EntidadesContext contexto = new EntidadesContext();
+                int i = 0;
+                var retornarDados = from d in contexto.Cliente
+                                    select d;
+
+                int total = retornarDados.Count();
+                nudCadastroClienteID.Maximum = total;
+
+                foreach (var item in retornarDados)
                 {
+                    dgvCadastroCliente.Rows.Add(new object[]
+                    {
                     dgvCadastroCliente.Rows[i].Cells["ID"].Value = item.ID,
                     dgvCadastroCliente.Rows[i].Cells["NOME"].Value = item.Nome,
                     dgvCadastroCliente.Rows[i].Cells["FILIACAO"].Value = item.Filiacao,
@@ -200,8 +218,21 @@ namespace UML
                     dgvCadastroCliente.Rows[i].Cells["CELULAR"].Value = item.Celular,
                     dgvCadastroCliente.Rows[i].Cells["LIMITE_DE_CREDITO"].Value = item.Limite_De_Credito,
                     dgvCadastroCliente.Rows[i].Cells["STATUS_CLIENTE"].Value = item.Status_Cliente
-                });
-                i++;
+                    });
+                    i++;
+                }
+
+                dgvCadastroCliente.RowCount = total;
+
+                lblClienteBancoSituacao.Text = "ONLINE";
+                lblClienteBancoSituacao.ForeColor = Color.ForestGreen;
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Banco de Dados não conectado");
+                lblClienteBancoSituacao.Text = "OFFLINE";
+                lblClienteBancoSituacao.ForeColor = Color.Red;
             }
         }
     }
